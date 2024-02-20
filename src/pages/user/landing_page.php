@@ -3,6 +3,7 @@
     <div>
         <?php
 
+        include 'src/pages/user/sections/login/login.php';
         include 'src/pages/user/sections/home/home.php';
         include 'src/pages/user/sections/about/about.php';
         include 'src/pages/user/sections/register/register.php';
