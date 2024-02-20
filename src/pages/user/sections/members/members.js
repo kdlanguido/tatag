@@ -1,5 +1,6 @@
-$('#btn__register_back').click(function () {
-    $('.navbar').show();
+$('.btn__members_view').click(function () {
     $('.page').hide();
-    $('#page_home').fadeIn(300);
+    $('#page_members_view').fadeIn(300);
+    $('.navbar').hide();
 })
+
