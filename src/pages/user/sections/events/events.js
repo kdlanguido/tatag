@@ -1,5 +1,5 @@
-$('#btn__register_back').click(function () {
-    $('.navbar').show();
+$('.btn__event_join_event').click(function(){
     $('.page').hide();
-    $('#page_home').fadeIn(300);
+    $('#page_events_view').fadeIn(300)
+    $('.navbar').hide();
 })

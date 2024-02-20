@@ -85,5 +85,5 @@
         </div>
 
     </div>
-    <script src="src/pages/user/sections/register/register.js"></script>
+    <script src="src/pages/user/sections/events/events.js"></script>
 </section>
