@@ -6,113 +6,193 @@
     </div>
 
     <div style="height:90vh;" class="text-center py-2 mb-5">
+
+        <h5 class="mt-3" style="font-family:'SLD2019'">Administrators</h5>
         <div class="container">
-            <div class="row row-cols-4">
-                <div class="col">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/public/events/tanat.png" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
+            <div class="row">
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Founder</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Co-Founder</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Head of Members Affairs</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Head Coach</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/public/members/dump.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Equipments Director</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/public/members/dump.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Head of Research and Development</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/public/members/dump.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Treasurer</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
                         </div>
                     </div>
                 </div>
-
-                <div class="col">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/public/members/dump.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/public/members/dump.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
+
+        <h5 class="mt-3" style="font-family:'SLD2019'">Members</h5>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Founder</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Co-Founder</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Head of Members Affairs</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Head Coach</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Equipments Director</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Head of Research and Development</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12 mb-2">
+                    <div class="card">
+                        <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Puller Name</h5>
+                            <p class="card-text">Treasurer</p>
+                            <button class="btn btn__members_view" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">View Member</button>
+                            <p class="card-text"><small class="text-body-secondary">Member Since : 01/01/2023</small></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="src/pages/user/sections/members/members.js"></script>
 </section>

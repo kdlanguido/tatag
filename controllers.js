@@ -1,0 +1,1 @@
+c_accounts = 'src/database/controllers/accounts_controller.php'

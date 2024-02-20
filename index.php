@@ -44,6 +44,7 @@ $_SESSION['SYS_TYPE'] = "ecommerce";
     <script src="src/lib/html2canvas/dist/html2canvas.min.js"></script>
     <script src="src/lib/html2pdf.js/dist/html2pdf.js"></script>
     <script src="src/func/system.js"></script>
+    <script src="src/func/controllers.js"></script>
 
     <?php include 'src/auth/login.php'; ?>
 

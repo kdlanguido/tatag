@@ -8,7 +8,6 @@ class Database
     private $pwd = '';
     private $conn;
 
-
     public function read($q, $d = [])
     {
         try {

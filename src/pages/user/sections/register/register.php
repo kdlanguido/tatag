@@ -1,6 +1,7 @@
 <section class="page" id="page_register" style="color:#21313C!important; display:none">
 
-    <div style="background:#000; color:#E9C001" id="div__register_header" class="d-flex flex-column  justify-content-center align-items-center py-4 pt-2">
+    <div style="background:#000; color:#E9C001" id="div__register_header" 
+    class="d-flex flex-column  justify-content-center align-items-center py-4 pt-4">
         <div class="w-100 px-2">
             <button class="btn text-dark float-end" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400" id="btn__register_back">Back</button>
         </div>

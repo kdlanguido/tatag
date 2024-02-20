@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nav__user_nav_bar">
-            <ul class="navbar-nav me-auto mt-2 mb-2 mb-lg-0" style="font-family:'SLD2019'; font-size:15pt">
+            <ul class="navbar-nav me-auto mt-2 mb-2 mb-lg-0" style="font-size:15pt">
                 <li class="nav-item">
                     <a class="header-link nav-link d-flex align-items-center active" goto="page_home">
                         <i class="fa-solid fa-house d-block d-md-none me-2 fa-fw"></i>
