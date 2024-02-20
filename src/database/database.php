@@ -3,7 +3,7 @@
 class Database
 {
     private $host = 'localhost';
-    private $db = 'projects_scmgmt';
+    private $db = 'projects_awph';
     private $uid = 'root';
     private $pwd = '';
     private $conn;

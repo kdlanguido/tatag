@@ -126,19 +126,6 @@ function deleteCookie(cookieName) {
     document.cookie = cookieName + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
 }
 
-function is_valid_email(input) {
-
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-    if (input.match(validRegex)) {
-        return true;
-
-    } else {
-        return false;
-    }
-
-}
-
 function show_toast(title, message, type = "information") {
     $("#toast_title").text(title)
     $("#toast_body").empty().append(message)

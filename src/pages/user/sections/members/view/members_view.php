@@ -7,7 +7,15 @@
         <img src="src/img/tatag_logo.png" style="width:210px">
     </div>
 
-    <h4>qwe</h4>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>qwe</h4>
+
+            </div>
+        </div>
+    </div>
 
     <script src="src/pages/user/sections/members/view/members_view.js"></script>
 

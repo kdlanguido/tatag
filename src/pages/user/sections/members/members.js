@@ -4,3 +4,7 @@ $('.btn__members_view').click(function () {
     $('.navbar').hide();
 })
 
+loadMembers = () => {
+
+}
+

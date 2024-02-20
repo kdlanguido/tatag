@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="header-link nav-link d-flex align-items-center" goto="page_members">
+                    <a class="header-link nav-link d-flex align-items-center" mainFunction="loadMembers" goto="page_members">
                         <i class="fa-solid fa-user-group d-block d-md-none me-2 fa-fw"></i>
                         Members
                     </a>

@@ -8,7 +8,7 @@ $(document).ready(function () {
         $('.header-link').removeClass('active')
         $('.page').hide();
         $('#' + getCookie('current_page')).show()
-        $('.header-link[goto=' + getCookie('current_page')+ ']').addClass('active')
+        $('.header-link[goto=' + getCookie('current_page') + ']').addClass('active')
     }
 
     $('.header-link').click(function () {
@@ -16,7 +16,11 @@ $(document).ready(function () {
         $(this).addClass('active')
         $('.page').hide()
         $('#' + $(this).attr('goto')).fadeToggle();
+
         setCookie('current_page', $(this).attr('goto'))
+        if (typeof getCookie('mainFunction') !== "undefined") {
+            $(this).attr('mainFunction')();
+        }
     })
 })
 
