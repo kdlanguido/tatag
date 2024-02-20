@@ -1,0 +1,27 @@
+#student_micro_page_personal {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+/* width */
+#student_micro_page_personal::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+#student_micro_page_personal::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 5px;
+}
+
+/* Handle */
+#student_micro_page_personal::-webkit-scrollbar-thumb {
+    background: #05147B;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+#student_micro_page_personal::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}

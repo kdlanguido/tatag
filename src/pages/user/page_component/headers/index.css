@@ -1,0 +1,29 @@
+
+.header_design {
+   background: #141516 !important;
+   height: 6vh !important;
+   box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 10px -10px !important;
+   border-bottom:1px solid #414040;
+}
+
+.header-link.active {
+   color:#E9C001 !important;
+}
+
+.header-link:hover{
+   cursor: pointer;
+   color:#E9C001 !important;
+}
+
+.nav_school li a{
+   color:#141516;
+   font-weight: 500;
+}  
+
+.vertical-center {
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+ }

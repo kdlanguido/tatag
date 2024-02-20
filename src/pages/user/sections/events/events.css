@@ -1,0 +1,16 @@
+@media screen and (min-width: 365px) {
+
+    #div_events_header img {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #div_events_header {
+        height: 40vh;
+    }
+
+    #div_events_header img {
+        display: block !important;
+    }
+}

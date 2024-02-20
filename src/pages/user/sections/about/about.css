@@ -1,0 +1,83 @@
+#page_dashboard h4,
+#page_dashboard h5,
+#page_dashboard label,
+#page_manageclub h4,
+#page_manageclub h5,
+#page_manageclub label {
+    font-family: oswald;
+}
+
+
+
+
+@media screen and (min-width: 365px) {
+
+    .dashboard_items {
+        margin-top: 3em;
+        margin-left: -4em;
+
+        flex-direction: column !important;
+
+    }
+
+    .dashboard_items img {
+        margin-bottom: 1em;
+
+    }
+
+    .skills_set_title {
+        width: 50%;
+    }
+
+    .skills_set_stats {
+        margin-left: -187px !important;
+        margin-top: 30px !important;
+    }
+
+    .tbl_index_td {
+        width: 32%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .dashboard_items {
+        margin-top: 0;
+        margin-left: 0;
+        padding-right: 0;
+        flex-direction: row !important;
+        margin-bottom: 0 !important
+    }
+
+    .dashboard_items table {
+        margin-left: 1rem !important;
+        margin-bottom: 0 !important
+    }
+
+    .tbl_index_td {
+        width: 20%;
+    }
+
+
+    .skills_set_title {
+        width: 16.66666667%;
+    }
+
+    .skills_set_stats {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .dashboard_items img {
+        margin-bottom: 0;
+    }
+
+}
+
+#list_achievements li {
+    list-style-image: url(../../../../public/others/medal-solid.svg);
+}
+
+.btn_hover:hover {
+    cursor: pointer;
+}

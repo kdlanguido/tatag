@@ -1,0 +1,48 @@
+.connected-steps {
+    display: flex;
+    width: 100px;
+    align-items: center;
+}
+
+
+.step {
+    color: white;
+    background-color: #0A1881;
+    display: block;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 9pt;
+    opacity: .2;
+}
+
+.step:hover {
+    cursor: pointer;
+    opacity: 1;
+
+}
+
+.step.active {
+    color: white;
+    background-color: #0A1881;
+    display: block;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 9pt;
+    opacity: 1;
+}
+
+
+.connector {
+    flex-grow: 1;
+    width: 10px;
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #0A1881;
+}

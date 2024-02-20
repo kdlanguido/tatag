@@ -1,0 +1,26 @@
+/* width */
+#card_section_schedule::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+#card_section_schedule::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 5px;
+}
+
+/* Handle */
+#card_section_schedule::-webkit-scrollbar-thumb {
+    background: #05147B;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+#card_section_schedule::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+#tbl_admin_section_subjects tbody tr td {
+    height: 160px;
+    vertical-align: middle !important;
+}

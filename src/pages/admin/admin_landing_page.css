@@ -1,0 +1,41 @@
+.sidebar-selected {
+    background: #F3F9FE;
+    border-left: 5px solid #0A1881;
+    color: #0A1881 !important;
+}
+
+.sidebar {
+    list-style-type: none;
+}
+
+.sidebar>li {
+
+    height: 50px;
+    padding-left: 2em;
+    display: flex;
+    align-items: center;
+    color: #212529bf;
+
+
+}
+
+.sidebar>li:hover {
+    border-left: 5px solid #0A1881;
+    cursor: pointer;
+    background: #F3F9FE !important;
+
+}
+
+.pe_micro_nav:hover {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #0A1881 !important;
+    border: 0 !important;
+}
+
+p {
+    padding-bottom: 0px !important;
+    margin-bottom:0px !important;
+}
