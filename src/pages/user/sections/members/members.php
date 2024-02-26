@@ -7,7 +7,7 @@
 
     <div style="height:90vh;" class="text-center py-2 mb-5">
 
-        <h5 class="mt-3" style="font-family:'SLD2019'">Administrators</h5>
+        <h5 class="mt-3">Administrators</h5>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-12 mb-2">
@@ -100,8 +100,8 @@
             </div>
         </div>
 
-        <h5 class="mt-3" style="font-family:'SLD2019'">Members</h5>
-        <div class="container">
+        <h5 class="mt-3">Members</h5>
+        <div class="container mb-3">
             <div class="row">
                 <div class="col-lg-4 col-12 mb-2">
                     <div class="card">
@@ -151,7 +151,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-12 mb-2">
                     <div class="card">
                         <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
@@ -164,7 +163,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-12 mb-2">
                     <div class="card">
                         <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
@@ -177,7 +175,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-12 mb-2">
                     <div class="card">
                         <img src="src/public/members/tat.png" style="width: 100%; height: 250px; object-fit: contain;" alt="...">
