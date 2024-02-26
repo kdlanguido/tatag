@@ -14,36 +14,36 @@
             <div class="col">
 
                 <div class="form-floating my-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Fullname</label>
+                    <input type="email" class="form-control" id="txt__ev_fullname">
+                    <label for="txt__ev_fullname">Fullname</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Nickname</label>
+                    <input type="password" class="form-control" id="txt__ev_nickname">
+                    <label for="txt__ev_nickname">Nickname</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Weight</label>
+                    <input type="password" class="form-control" id="txt__ev_weight">
+                    <label for="txt__ev_weight">Weight</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Club Name</label>
+                    <input type="password" class="form-control" id="txt__ev_clubname">
+                    <label for="txt__ev_clubname">Club Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Age</label>
+                    <input type="password" class="form-control" id="txt__ev_age">
+                    <label for="txt__ev_age">Age</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Address</label>
+                    <input type="password" class="form-control" id="txt__ev_address">
+                    <label for="txt__ev_address">Address</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Mobile number</label>
+                    <input type="password" class="form-control" id="txt__ev_mobilenumber">
+                    <label for="txt__ev_mobilenumber">Mobile number</label>
                 </div>
                 
                 <label for="">T-shirt Size</label>
-                <select class="form-select">
+                <select class="form-select" id="select__ev_shirt_size">
                     <option value="1">S</option>
                     <option value="2">M</option>
                     <option value="3">L</option>
