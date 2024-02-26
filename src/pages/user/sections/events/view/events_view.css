@@ -12,13 +12,22 @@
     height: 100%;
 }
 
+#cb__ev:hover{
+    border: 2px solid darkgray;
+}
+
 
 @media screen and (max-width: 768px){
     
 
     #div__ev_form{
-        background: blue;
+        width: 100%;
         
+    }
+
+    #div__ev_img{
+        width: 100%;
+
     }
 }
 
