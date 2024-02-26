@@ -5,6 +5,7 @@ echo '
     <link rel="stylesheet" href="src/pages/user/sections/home/home.css">
     <link rel="stylesheet" href="src/pages/user/sections/register/register.css">
     <link rel="stylesheet" href="src/pages/user/sections/events/events.css">
+    <link rel="stylesheet" href="src/pages/user/sections/events/view/events_view.css">
 ';
 if ($_SESSION['sesh_access_level'] == '4') {
     echo '

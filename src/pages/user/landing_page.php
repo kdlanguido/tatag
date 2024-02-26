@@ -10,6 +10,8 @@
         include 'src/pages/user/sections/events/events.php';
         include 'src/pages/user/sections/members/members.php';
         include 'src/pages/user/sections/members/view/members_view.php';
+        include 'src/pages/user/sections/events/view/events_view.php';
+
 
         ?>
     </div>
