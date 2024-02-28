@@ -1,35 +1,31 @@
-.input__ev_form:focus{
+.input__ev_form:focus {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border: 1px solid black;
 }
 
-#btn__ev_join:hover{
+#btn__ev_join:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-#img__ev_form{
+#img__ev_form {
     width: 100%;
-    height: 100%;
 }
 
-#cb__ev:hover{
+#cb__ev:hover {
     border: 2px solid darkgray;
 }
 
 
-@media screen and (max-width: 768px){
-    
+@media screen and (max-width: 768px) {
 
-    #div__ev_form{
+
+    #div__ev_form {
         width: 100%;
-        
+
     }
 
-    #div__ev_img{
+    #div__ev_img {
         width: 100%;
 
     }
 }
-
-
-

@@ -16,14 +16,16 @@
                         <div class="row g-0">
                             <div class="col-md-5 col-12">
                                 <div>
-                                    <img src="src/public/events/poster-301.png" style="width:100%; height:370px; object-fit:fill" class=" img-fluid rounded-start" alt="...">
+                                    <img src="src/public/events/tanat.png" style="width:100%; height:370px; object-fit:fill" class=" img-fluid rounded-start" alt="...">
                                 </div>
                             </div>
                             <div class="col-md-7 col-12">
                                 <div class="card-body" style="position:relative; height:370px">
                                     <h5 class="card-title">Titan Arms National Tournament</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue vehicula lacus id venenatis. Donec sed elit molestie nibh maximus finibus nec ut justo.</p>
-                                    <button class="btn__event_join_event btn" style="background:#E9C001; font-weight:600; font-size:11pt; font-weight:400">Join Event</button>
+                                    <p class="card-text">
+                                        Are you ready for an electrifying arm-wrestling showdown brought to you by Titan Arms Taguig! Join the pulse-pounding action at the Calisthenics Park in Market! Market! Ayala Malls Taguig
+                                    </p>
+                                    <button class="btn__event_join_event btn">Join Event</button>
                                     <p class="card-text" style="position:absolute; right:10px;bottom:10px;"><small class="text-body-secondary">Event Date : <span class="fw-bold">June 30, 2024</span></small></p>
 
                                 </div>
