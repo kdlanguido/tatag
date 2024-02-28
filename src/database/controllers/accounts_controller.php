@@ -15,8 +15,6 @@ if ($_GET) {
     $option = $_POST['request_type'];
 }
 
-
-
 if (!$option) {
     echo json_encode(
         [
@@ -26,69 +24,57 @@ if (!$option) {
         ]
     );
     exit;
-} else if ($option == "register_account") {
+} else if ($option == "submit_registration") {
 
     $db = new Database();
 
     $q = "
-            INSERT INTO 
-                tbl_users(username,password,access_level,email)
-            VALUES  
-                (:username,:password,:access_level,:email)
-    ";
-
-    $d = [
-        'username' => $_POST['username'],
-        'password' => $_POST['password'],
-        'access_level' => $_POST['access_level'],
-        'email' => $_POST['email'],
-    ];
-
-    $db->update($q, $d);
-
-    $q = "
-        SELECT 
-            id
-        FROM
-            tbl_users
-        ORDER BY
-            id
-        DESC LIMIT 1
-    ";
-
-    $res =  $db->read($q);
-
-    $q = "
         INSERT INTO 
-            tbl_profile(name,nickname,weight,category,member_type,user_id)
+            tbl_tanat(
+                fullname,
+                weight,
+                mobile_no,
+                shirt_size,
+                league,
+                category,
+                payment_dir,
+                payment_name,
+                payment_ref_no
+            )
         VALUES  
-            (:name,:nickname,:weight,:category,:member_type,:user_id)
+            (
+                :fullname,
+                :weight,
+                :mobile_no,
+                :shirt_size,
+                :league,
+                :category,
+                :payment_dir,
+                :payment_name,
+                :payment_ref_no
+            )
     ";
 
+    $rand_uniq = rand(1111, 9889);
+
+    $payment_proof = $_FILES["payment_proof"]["tmp_name"];
+    $payment_proof_dir = "src/public/students_payment_proof/" . $rand_uniq .  $_FILES["payment_proof"]["name"];
+    move_uploaded_file($payment_proof,  "../../public/payments/" . $rand_uniq .  $_FILES["payment_proof"]["name"]);
+
+
     $d = [
-        'name' => $_POST['name'],
-        'nickname' => $_POST['nickname'],
+        'fullname' => $_POST['fullname'],
         'weight' => $_POST['weight'],
+        'mobile_no' => $_POST['mobile_no'],
+        'shirt_size' => $_POST['shirt_size'],
+        'league' => $_POST['league'],
         'category' => $_POST['category'],
-        'member_type' => $_POST['member_type'],
-        'user_id' => $res[0]['id']
+        'payment_dir' => $payment_proof_dir,
+        'payment_name' => $_POST['payment_name'],
+        'payment_ref_no' => $_POST['payment_ref_no']
     ];
 
-    $db->update($q, $d);
-
-    $q = "
-        INSERT INTO 
-            tbl_club_members(club_id,user_id)
-        VALUES  
-            (:club_id,:user_id)
-    ";
-
-    $d = [
-        'club_id' => $_POST['club_id'],
-        'user_id' => $res[0]['id'],
-    ];
-
-    $db->update($q, $d);
+    echo $db->update($q, $d);
 } else if ($option == "check_username_availability") {
 
     $db = new Database();

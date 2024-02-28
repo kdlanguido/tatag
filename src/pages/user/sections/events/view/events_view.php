@@ -114,61 +114,111 @@
         <div class="container">
             <div class="row mb-3">
                 <div class="col-md-7 align-items-center justify-content-center p-0" id="div__ev_img">
-                    <div style="object-fit:contain; height:100%; width:100% ">
+                    <div style="object-fit:contain; ">
                         <img src=" src/public/events/tanat.png" alt="" id="img__ev_form">
                     </div>
                 </div>
-                <div class="col-md-5 align-items-center justify-content-center p-5  bg-light" id="div__ev_form">
+                <div class="col-md-5 align-items-center justify-content-center p-lg-5 p-3 bg-light" id="div__ev_form">
 
                     <p class="mb-3" style="font-weight: 600;">Puller Information</p>
 
                     <label for="">Full Name</label>
-                    <input type="text" class="form-control mb-2 input__ev_form" id="txt__ev_fullname">
+                    <input type="text" class="form-control mb-2 required_string input__ev_form" id="txt__ev_fullname">
 
-                    <label for="">Weight</label>
-                    <input type="text" class="form-control mb-2 input__ev_form" id="txt__ev_weight" placeholder="(kg)">
+                    <label for="">Mobile Number</label>
+                    <input type="number" class="form-control input__ev_form" id="txt__ev_mobile_number" placeholder="ex. 09123456789">
+                    <h6 style="font-size:9pt;" class="text-secondary text-end mb-2">**This is where you will receive OTP</h6>
+
 
                     <div class="row">
-                        <div class="col-12 col-lg-9 mb-2">
-                            <label for="">Mobile Number</label>
-                            <input type="text" class="form-control input__ev_form" id="txt__ev_mobile_number" placeholder="ex. 09123456789">
-                            <small class="text-secondary mb-2">**Valid mobile number is required**</small>
+                        <div class="col-12 col-lg-6 mb-2 mb-lg-0">
+                            <label for="">League</label>
+                            <select class="form-select mb-2 required_string input__ev_form" id="select__ev_league">
+                                <option value="AMATEUR" selected>AMATEUR</option>
+                                <option value="PROFESSIONAL">PROFESSIONAL</option>
+                            </select>
                         </div>
-                        <div class="col-12 col-lg-3 mb-2">
-                            <label for="">T-Shirt Size</label>
-                            <select class="form-select mb-2 input__ev_form" id="select__ev_tshirt_size">
-                                <option value="1" selected>S</option>
-                                <option value="2">M</option>
-                                <option value="3">L</option>
-                                <option value="4">XL</option>
-                                <option value="5">2XL</option>
-                                <option value="6">3XL</option>
-                                <option value="7">4XL</option>
+                        <div class="col-12 col-lg-6 mb-2">
+                            <label for="">Category</label>
+                            <select class="form-select mb-2 required_string input__ev_form" id="select__ev_category">
+                                <option value="RIGHT HAND" selected>RIGHT HAND</option>
+                                <option value="LEFT HAND">LEFT HAND</option>
+                                <option value="BOTH">BOTH</option>
                             </select>
                         </div>
                     </div>
 
-                    <img src="src/img/gcash.jpg" style="width:100%" alt="">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <label for="">Weight</label>
+                            <input type="number" class="form-control required_number input__ev_form" id="txt__ev_weight" placeholder="(kg)">
+                            <h6 style="font-size:9pt;" class="text-secondary mb-2 text-end">**Entering fake weight can lead to disqualification</h6>
+                        </div>
+                        <div class="col-12 col-lg-6 mb-2">
+                            <label for="">T-Shirt Size</label>
+                            <select class="form-select mb-2 required_string input__ev_form" id="select__ev_tshirt_size">
+                                <option value="S" selected>S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="2XL">2XL</option>
+                                <option value="3XL">3XL</option>
+                                <option value="4XL">4XL</option>
+                            </select>
+                        </div>
+                    </div>
 
-                    <div class="text-center">
+
+
+                    <p class="mb-1 mt-4" style="font-weight: 600;">Payment Information</p>
+
+                    <div class="d-flex w-100 mb-2 justify-content-center">
+                        <img src="src/img/gcash.jpg" style="width:85%; margin-left:auto; margin-right:auto;" alt="">
+                    </div>
+
+                    <div class="text-center my-2">
                         <label class="fw-bold">Gcash Account</label>
                         <p>King Dranreb L.<br>09171077268</p>
                     </div>
 
-                    <div class=" mt-3 mb-4">
+                    <label for="">Payment Proof</label>
+                    <input type="file" accept="image/*" class="form-control mb-2 input__ev_form" id="txt__ev_paymentProof">
 
-                        <input class="form-check-input input__ev_form" type="checkbox" value="" id="cb__ev">
+                    <label for="">GCash Name</label>
+                    <input type="text" class="form-control required_string mb-2 input__ev_form" id="txt__ev_gcashName" placeholder="GCash used for payment">
+
+                    <label for="">Reference Number</label>
+                    <input type="number" class="form-control required_number mb-2 input__ev_form" id="txt__ev_referenceNo" placeholder="GCash reference no.">
+
+                    <div class="mt-4 mb-2 form-check">
+                        <input class="form-check-input" type="checkbox" id="cb__ev">
                         <label class="form-check-label" for="cb__ev">
-                            I accept the <a href="#a__terms">terms and conditions</a>
+                            By clicking here, I state that I have read and understood the <a href="#a__terms">terms and conditions.</a>
                         </label>
                     </div>
 
-                    <button class="btn btn-warning ms-auto px-4" id="btn__ev_join" style="width: auto; float:right">Join</button>
+                    <button class="btn btn-warning w-100" id="btn__ev_join" style="width: auto; float:right">Join</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OTP MODAL -->
+    <div class="modal fade" tabindex="-1" id="modal__ev_otp">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">MOBILE NUMBER VERIFICATION</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="number" class="form-control" placeholder="Enter OTP here...">
+                    <button class="btn btn-primary btn-sm w-100 mt-3" data-bs-dismiss="modal" id="btn__ev_sendOtp">Send OTP</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="src/pages/user/sections/events/view/events_view.js"></script>
-
 </section>
