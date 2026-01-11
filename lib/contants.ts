@@ -85,11 +85,11 @@ export const appSidebarNav = {
                 },
                 {
                     title: "Prueba De Fuerza",
-                    url: "#",
+                    url: "/training/pdf",
                 },
                 {
                     title: "Welcome Rites",
-                    url: "#",
+                    url: "training/wr",
                 },
             ],
         },
