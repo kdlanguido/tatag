@@ -20,11 +20,11 @@ export default function HighlightsCard() {
                         Titan Arms Taguig: Rise of the Strongest
                     </p>
                     <p className="text-xs text-justify text-muted-foreground mb-5">
-                        An epic clash of strength, brotherhood, and honor. Step forward and compete for the ultimate title — who will rise as the strongest Titan?
+                       Champion 2025 : Jay Batistil
                     </p>
-                    <Button variant="outline" className="cursor-pointer font-normal text-[12px] !py-1 w-[120px] ms-auto">
+                    {/* <Button variant="outline" className="cursor-pointer font-normal text-[12px] !py-1 w-[120px] ms-auto">
                         <UserPen />Register
-                    </Button>
+                    </Button> */}
                 </div>
             </CardContent>
         </Card>

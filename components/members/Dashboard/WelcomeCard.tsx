@@ -39,26 +39,6 @@ export default async function WelcomeCard() {
                     <p className="text-sm text-muted-foreground p-0 md:px-2">
                         Continue your training! Here&apos;s your training summary.
                     </p>
-                    <div className="mt-4 flex items-center gap-6">
-                        <Button
-                            className="flex-1 justify-start hover:bg-gray-100 p-0 md:p-2 rounded cursor-pointer text-start "
-                            variant="ghost"
-                        >
-                            <div>
-                                <div className="text-xs text-muted-foreground">View Pending Training</div>
-                                <div className="text-lg font-semibold">{ }</div>
-                            </div>
-                        </Button>
-                        <Button
-                            className="flex-1 justify-start hover:bg-gray-100 p-0 md:p-2 rounded cursor-pointer text-start"
-                            variant="ghost"
-                        >
-                            <div>
-                                <div className="text-xs text-muted-foreground">Completed</div>
-                                <div className="text-lg font-semibold">{ }</div>
-                            </div>
-                        </Button>
-                    </div>
                 </>
                 {/* ) : (
                             <p className="text-sm text-muted-foreground p-0 md:px-2">

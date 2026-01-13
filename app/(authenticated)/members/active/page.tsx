@@ -1,4 +1,4 @@
-import { fetchActiveMembers, fetchMembershipUpdateRequests } from "@/actions/user"
+import { fetchActiveMembers } from "@/actions/user"
 import { columns } from "@/components/members/Active/Columns"
 import { DataTable } from "@/components/members/Active/Data-Table"
 import { Suspense } from "react"

@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { UserI } from '@/model/User.model'
 import { toast } from 'sonner'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export default function ApplicationForm({ chaptersList, profile }: {
     chaptersList: ChapterICustom[],
@@ -27,7 +27,7 @@ export default function ApplicationForm({ chaptersList, profile }: {
                 description: "Application Success, Please give us time to review your application."
             })
 
-            router.reload();
+            router.refresh();
         }
     }, [formState])
 

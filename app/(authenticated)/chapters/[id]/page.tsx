@@ -13,6 +13,7 @@ import { MembersDataTable } from "@/components/chapters/MembersDataTable/Data-Ta
 import { columns } from "@/components/chapters/MembersDataTable/Columns"
 import { ApplicantsDataTable } from "@/components/chapters/ApplicantsDataTable/Data-Table"
 import { applicantColumns } from "@/components/chapters/ApplicantsDataTable/Columns"
+import ChapterImage from "@/components/chapters/ChapterImage"
 
 export default async function Page({
     params,
@@ -44,15 +45,7 @@ export default async function Page({
 
                     <div className="flex items-center w-full flex-col gap-8">
                         <div className="relative w-[300px] h-[300px] md:w-[300px] md:h-[300px] p-5">
-                            <Image
-                                src={chapterInfo.logo}
-                                alt="Chapter Logo"
-                                height={200}
-                                width={200}
-                                className="object-contain w-auto"
-                                placeholder="blur"
-                                blurDataURL="/assets/logo.png"
-                            />
+                         <ChapterImage imageUrl={chapterInfo.logo} />
                         </div>
 
                         <div className="flex flex-col  items-center mb-10">
