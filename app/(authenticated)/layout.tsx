@@ -18,9 +18,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
-  title: "Member Dashboard",
-  description: "This portal is developed by LD Solutions PH",
+  title: "Titan Arms Portal",
+  description: "Official website of Titan Arms Brotherhood",
 };
 
 export default async function RootLayout({
