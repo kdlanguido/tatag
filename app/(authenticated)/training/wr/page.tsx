@@ -5,14 +5,15 @@ export default async function Page() {
 
     const coc = [
         {
-            title: "Titan Arms Brotherhood Code of Conduct",
             descriptions: [
                 {
                     info: (
                         <>
-                            Prueba De Fuerza is the tradition that every member has successfully went through.
-                            It is in a form of supermatch between the applicant and a member of the same weight class.
-                            This is where the applicant showcase all the learnings and the applicant must win the supermatch.
+                            Every applicant that successfully completes the Prueba De Fuerza, will be given an opportunity to partake in the Welcome Rites.
+                            This ceremony is a significant milestone in your journey with the Titan Arms Brotherhood, symbolizing your commitment and acceptance into our community.
+                            During the Welcome Rites, you will be formally introduced to the brotherhood, where you will take an oath to uphold the values and principles that define us.
+                            It is a time for celebration, camaraderie, and reflection on the journey that has brought you here.
+                            Embrace this moment with pride and remember that you are now part of a legacy that values strength, honor, and unity.
                         </>
                     )
                 },
@@ -66,8 +67,8 @@ export default async function Page() {
                 <div className="w-full md:w-1/2">
                     <div className="mb-5 flex justify-between">
                         <div className="flex flex-col">
-                            <h1 className="font-semibold">Training 4 : Prueba De Fuerza</h1>
-                            <h1 className=" text-sm text-muted-foreground">Final step as an applicant</h1>
+                            <h1 className="font-semibold">Training 5 : Welcome Rites</h1>
+                            <h1 className=" text-sm text-muted-foreground">A new milestone in your journey</h1>
                         </div>
                     </div>
 
@@ -91,20 +92,6 @@ export default async function Page() {
                                         </div>
                                     )
                                 }
-                            </AccordionContent>
-                        </AccordionItem>
-
-                        <AccordionItem value="item-2">
-                            <AccordionTrigger>How to qualify for the Prueba De Fuerza?</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4">
-                                <HowToQualify />
-                            </AccordionContent>
-                        </AccordionItem>
-
-                        <AccordionItem value="item-3">
-                            <AccordionTrigger>What if i fail the Prueba De Fuerza?</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4">
-                                <WhatIfFailed />
                             </AccordionContent>
                         </AccordionItem>
 

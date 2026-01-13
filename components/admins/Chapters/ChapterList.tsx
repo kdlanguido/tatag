@@ -2,7 +2,6 @@
 
 import { use, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ChapterI } from "@/model/Chapter.model";
 import { UserI } from "@/model/User.model";
 import ChapterCard from "./ChapterCard";
 import { Plus } from "lucide-react";
@@ -11,16 +10,12 @@ export default function ChapterList({
     chapters,
     profileData
 }: {
-    chapters: Promise<ChapterI[]>,
+    chapters: Promise<ChapterICustom[]>,
     profileData: Promise<UserI>
 }) {
 
     const chapterList = use(chapters)
     const profile = use(profileData)
-
-    useEffect(() => {
-
-    }, [])
 
     return (
         <div className='flex flex-1 flex-col gap-4 p-4'>
@@ -38,7 +33,7 @@ export default function ChapterList({
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
                     {
                         chapterList.map((data, index) =>
-                            <ChapterCard chapter={data} key={index} />
+                            <ChapterCard chapter={data} key={index} profile={profile} />
                         )
                     }
                 </div>

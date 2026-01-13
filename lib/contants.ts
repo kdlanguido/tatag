@@ -89,7 +89,7 @@ export const appSidebarNav = {
                 },
                 {
                     title: "Welcome Rites",
-                    url: "training/wr",
+                    url: "/training/wr",
                 },
             ],
         },
