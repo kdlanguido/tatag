@@ -1,8 +1,6 @@
 "use client"
 
 import { SidebarIcon } from "lucide-react"
-
-import { SearchForm } from "@/components/search-form"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -28,17 +26,18 @@ export function SiteHeader() {
         >
           <SidebarIcon />
         </Button>
+
         <Separator orientation="vertical" className="mr-2 h-4" />
         <Breadcrumb className="hidden sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href="/dashboard">
                 Titan Arms Portal
               </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <SearchForm className="w-full sm:ml-auto sm:w-auto" />
+
       </div>
     </header>
   )

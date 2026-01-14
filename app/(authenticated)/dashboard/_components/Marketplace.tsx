@@ -8,15 +8,14 @@ import Image from "next/image";
 export default function MarketplaceCard() {
     return (
         <Card className="gap-3">
-            <CardHeader className="flex justify-between items-center mb-3">
+            <CardHeader className="flex justify-between mb-3">
                 <div className="flex items-center gap-2">
                     <ShoppingBag className="h-4 w-4" />
                     <CardTitle>Marketplace</CardTitle>
                 </div>
-
-                <Popover>
+                {/* <Popover>
                     <PopoverTrigger asChild>
-                        <Button variant="outline" className="cursor-pointer font-normal text-[12px] !py-1 w-[120px]">
+                        <Button variant="ghost" className="cursor-pointer font-normal text-[12px] !py-1 w-[120px]">
                             <ShoppingCartIcon className="!h-3 !w-3 mr-1" />
                             Visit
                         </Button>
@@ -24,7 +23,7 @@ export default function MarketplaceCard() {
                     <PopoverContent align="end" className="w-auto text-sm text-muted-foreground">
                         Marketplace is coming soon!
                     </PopoverContent>
-                </Popover>
+                </Popover> */}
             </CardHeader>
 
             <CardContent className="space-y-8">

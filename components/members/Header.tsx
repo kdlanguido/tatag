@@ -5,19 +5,16 @@ import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Dumbbell, LogOut, User, UserStar } from "lucide-react";
+import { LogOut} from "lucide-react";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 
 export function Header() {
 
     const router = useRouter();
-
     const handleLogout = async () => {
         await authClient.signOut({
             fetchOptions: {

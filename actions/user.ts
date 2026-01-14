@@ -4,7 +4,6 @@ import { auth } from "@/lib/auth";
 import { connectToMongoDB } from "@/lib/mongoose"
 import { MembershipUpdateLog } from "@/model/MembershipUpdateLog";
 import { User, UserI } from "@/model/User.model"
-import { success } from "better-auth";
 import { Types } from "mongoose";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";

@@ -58,7 +58,7 @@ export default function Page() {
             <CardHeader className="text-center gap-1">
                 <CardTitle className="text-2xl font-bold">Register Applicant</CardTitle>
                 <CardDescription>
-                    {temporaryMessage}
+                    {session ? "Syncing account..." : temporaryMessage}
                 </CardDescription>
             </CardHeader>
             <CardContent>

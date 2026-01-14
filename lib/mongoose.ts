@@ -1,19 +1,45 @@
-import mongoose, { Connection } from "mongoose";
+// lib/db.ts
+import mongoose from "mongoose";
 
-let cachedConnection: Connection | null = null;
+const MONGODB_URI = process.env.MONGODB_URI!;
+
+if (!MONGODB_URI) {
+  throw new Error("Please define the MONGODB_URI environment variable");
+}
+
+/** * Global is used here to maintain a cached connection across hot reloads 
+ * in development. This prevents connections from growing exponentially.
+ */
+let cached = (global as any).mongoose;
+
+if (!cached) {
+  cached = (global as any).mongoose = { conn: null, promise: null };
+}
 
 export async function connectToMongoDB() {
-    if (cachedConnection) {
-        console.log("Using cached db connection");
-        return cachedConnection;
-    }
-    try {
-        const cnx = await mongoose.connect(process.env.MONGODB_URI!);
-        cachedConnection = cnx.connection;
-        console.log("New mongodb connection established");
-        return cachedConnection;
-    } catch (error) {
-        console.log(error);
-        throw error;
-    }
+  if (cached.conn) {
+    return cached.conn;
+  }
+
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+
+    // We store the promise so that if two components call this 
+    // simultaneously, they both wait for the same connection.
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((m) => {
+      console.log("New mongodb connection established");
+      return m.connection;
+    });
+  }
+  
+  try {
+    cached.conn = await cached.promise;
+  } catch (e) {
+    cached.promise = null; // Reset promise on error
+    throw e;
+  }
+
+  return cached.conn;
 }

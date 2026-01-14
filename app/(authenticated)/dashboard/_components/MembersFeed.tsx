@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users } from "lucide-react";
-import Feed from "./MembersFeed/Feed";
+import Feed from "../../../../components/members/Dashboard/MembersFeed/Feed";
 
 export default function MembersFeed() {
     return (
