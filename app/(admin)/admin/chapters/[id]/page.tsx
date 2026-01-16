@@ -1,17 +1,18 @@
 import Link from "next/link"
 import { Suspense } from "react"
+import { fetchBatchByChapterId } from '@/app/(admin)/admin/_data/batch'
 import { checkIfUserIsChapterAdmin, fetchChapterById } from "@/actions/chapter"
 import { smackLaidethDown } from "@/app/fonts"
-import ChapterInfoTable from "@/components/admins/Chapters/ChapterInfoTable"
-import ChapterLocation from "@/components/admins/Chapters/ChapterLocation"
-import { ChapterOfficials } from "@/components/admins/Chapters/ChapterOfficials"
-import ChapterSkeleton from "@/components/admins/Chapters/ChapterSkeleton"
 import { Button } from "@/components/ui/button"
-import { columns } from "@/components/admins/Chapters/BatchDataTable/Columns"
-import { DataTable } from "@/components/admins/Chapters/BatchDataTable/Data-Table"
 import { Edit, Plus, Undo2, UserCog } from "lucide-react"
-import { fetchBatchByChapterId } from "@/actions/batch"
-import ChapterEditLogoBtn from "@/components/admins/Chapters/ChapterEditLogoBtn"
+import ChapterSkeleton from "../_components/ChapterSkeleton"
+import ChapterEditLogoBtn from "../_components/ChapterEditLogoBtn"
+import ChapterInfoTable from "../_components/ChapterInfoTable"
+import { ChapterOfficials } from "../_components/ChapterOfficials"
+import { DataTable } from "../_components/DataTable/Batch/Data-Table"
+import { columns } from "../_components/DataTable/Batch/Columns"
+import ChapterLocation from "../_components/ChapterLocation"
+import { redirect } from "next/navigation"
 
 export default async function Page({
     params,
@@ -24,6 +25,9 @@ export default async function Page({
     const batches = await fetchBatchByChapterId(id)
     const isAdmin = await checkIfUserIsChapterAdmin(id)
 
+    if(!chapterInfo){
+        redirect("/admin/chapters")
+    }
 
     return (
         <Suspense fallback={<ChapterSkeleton />}>

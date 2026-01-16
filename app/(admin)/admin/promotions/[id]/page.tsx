@@ -1,10 +1,10 @@
-import { fetchBatchByChapterId } from '@/actions/batch'
 import { fetchApplicationInformation, fetchProfile } from '@/actions/user'
 import ApplicationForm from '@/components/admins/Applications/Forms/ApplicationForm'
 import { Button } from '@/components/ui/button'
 import { Undo2 } from 'lucide-react'
 import Link from 'next/link'
 import { Suspense } from 'react'
+import { fetchBatchByChapterId } from '../../_data/batch'
 
 export default async function page({ params }: { params: Promise<{ id: string }> }) {
 

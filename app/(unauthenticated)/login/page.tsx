@@ -31,7 +31,7 @@ export default function LoginForm() {
 
     return (
         <div className="grid w-full max-w-sm gap-2 mx-auto mt-10 p-5">
-            <Image src="/assets/logo.png" height={"120"} width={"120"} alt="data" className="w-auto mx-auto mb-5" />
+            <Image src="/assets/logo.png" height={"120"} width={"120"} alt="data" className="w-auto mx-auto mb-5" priority/>
 
             <div className="mb-3">
                 <Label className="text-lg font-semibold">Welcome back!</Label>

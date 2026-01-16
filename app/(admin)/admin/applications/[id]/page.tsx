@@ -1,5 +1,5 @@
-import { fetchBatchByChapterId } from '@/actions/batch'
 import { fetchApplicationInformation, fetchProfile } from '@/actions/user'
+import { fetchBatchByChapterId } from '@/app/(authenticated)/_data/batch'
 import ApplicationForm from '@/components/admins/Applications/Forms/ApplicationForm'
 import { Button } from '@/components/ui/button'
 import { Undo2 } from 'lucide-react'

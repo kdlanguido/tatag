@@ -67,7 +67,7 @@ export const appSidebarNav = {
 
         },
         {
-            title: "Training",
+            title: "Training Book",
             url: "#",
             icon: Notebook,
             items: [
@@ -97,14 +97,21 @@ export const appSidebarNav = {
             title: "Membership",
             url: "#",
             icon: IdCard,
-            items: [{
-                title: "Member Information",
-                url: "/membership",
-            },
-            {
-                title: "Membership Requests",
-                url: "/membership/approvals",
-            },]
+            items: [
+                {
+                    title: "Member Information",
+                    url: "/membership",
+                },
+                {
+                    title: "Membership ID",
+                    url: "/membership/virtual-id",
+                },
+                {
+                    title: "Membership Requests",
+                    url: "/membership/approvals",
+                },
+
+            ]
 
         },
         {
@@ -150,8 +157,12 @@ export const appSidebarNav = {
             icon: BookUser,
             items: [
                 {
-                    title: "Chapters Lists",
+                    title: "Chapters List",
                     url: "/admin/chapters",
+                },
+                {
+                    title: "Applicants List",
+                    url: "/admin/applicants",
                 },
             ],
         },

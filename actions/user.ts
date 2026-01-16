@@ -7,6 +7,7 @@ import { User, UserI } from "@/model/User.model"
 import { Types } from "mongoose";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { createChecklist } from "./trainingChecklist";
 
 const registerUser = async (prevState: RegisterUserState, formData: FormData) => {
     await connectToMongoDB()
@@ -90,6 +91,12 @@ const updateUserAcceptApplication = async (prevState: GenericInitState, formData
     )
 
     if (!res) {
+        return { success: false }
+    }
+    
+    const createRes = await createChecklist(id)
+
+    if((!createRes.success)) {
         return { success: false }
     }
 

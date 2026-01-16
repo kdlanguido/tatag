@@ -14,7 +14,7 @@ export default function ChapterCard({ chapter }: { chapter: ChapterICustom }) {
         <Link href={"/chapters/" + chapter._id}>
             <Card className="w-full hover:shadow-lg transition-shadow duration-300 h-90">
                 <CardContent className="flex flex-col items-center gap-5 p-2 px-6">
-                    <div className="w-35 h-35 relative flex items-center justify-center bg-gray-50 rounded-md">
+                    <div className="w-35 h-35 relative flex items-center justify-center rounded-md">
                         
                         {isLoading && (
                             <div className="absolute inset-0 flex items-center justify-center z-10">

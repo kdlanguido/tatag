@@ -32,7 +32,7 @@ export const useChapterStore = create<ChapterState>()(
                 }))
         }),
         {
-            name: "UserStorage",
+            name: "ChapterStorage",
             partialize: (state) => ({}),
         }
     )

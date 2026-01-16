@@ -28,6 +28,7 @@ export default function Page() {
                             width={120}
                             height={120}
                             className="rounded-full w-auto"
+                            priority
                         />
                     </motion.div>
                     <h1 className="text-3xl font-bold text-center">

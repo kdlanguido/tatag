@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { UserI } from "@/model/User.model";
 import { BatchI } from "@/model/Batch.model";
-import { fetchBatchByChapterId } from "@/actions/batch";
 import { createMembershipUpdateRequest } from "@/actions/user";
 import { ApplicationUnderReviewAlert } from "../Alerts/ApplicantReviewAlert";
+import { fetchBatchByChapterId } from "@/app/(admin)/admin/_data/batch";
 
 export default function MembershipForm({
     chapterList,
@@ -85,14 +85,9 @@ export default function MembershipForm({
 
     return (
         <div className='flex flex-1 flex-col gap-4 p-4'>
-
             <div className="w-full md:w-1/2">
-
-
-
                 <form className="w-full">
                     <Input type="text" name="userId" hidden defaultValue={profile._id} />
-
                     {
                         profile?.membership?.memberStatus === "new" ?
                             <>
@@ -108,7 +103,6 @@ export default function MembershipForm({
                                     <h1 className="font-semibold">Membership Information</h1>
                                     <h1 className=" text-sm text-muted-foreground">Manage your membership information</h1>
                                 </div>
-
                                 <FieldGroup className="gap-5">
                                     <Field>
                                         <FieldLabel htmlFor="name">Chapter</FieldLabel>
@@ -200,7 +194,6 @@ export default function MembershipForm({
                     }
                 </form>
             </div>
-
         </div>
     )
 }

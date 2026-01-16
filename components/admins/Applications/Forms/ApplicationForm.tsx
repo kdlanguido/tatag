@@ -11,14 +11,11 @@ import { useRouter } from 'next/navigation'
 import { useActionState, useEffect } from 'react'
 import { toast } from 'sonner'
 
-export default function ApplicationForm({
-    applicationInformation,
-    batches,
-    adminId }: {
-        applicationInformation: ApplicantInformationI,
-        batches: BatchI[]
-        adminId: string
-    }) {
+export default function ApplicationForm({ applicationInformation, batches, adminId }: {
+    applicationInformation: ApplicantInformationI,
+    batches: BatchI[]
+    adminId: string
+}) {
 
     if (!applicationInformation) return null
 
@@ -44,12 +41,22 @@ export default function ApplicationForm({
             <form action={action}>
                 <FieldGroup>
                     <Field className="gap-1">
-                        <FieldLabel htmlFor="name">Applicant Name</FieldLabel>
+                        <FieldLabel htmlFor="name">Nickname</FieldLabel>
                         <Input
                             name="name"
                             type="text"
                             readOnly
                             defaultValue={applicationInformation.nickname}
+                        />
+                    </Field>
+
+                     <Field className="gap-1">
+                        <FieldLabel htmlFor="name">Email</FieldLabel>
+                        <Input
+                            name="name"
+                            type="text"
+                            readOnly
+                            defaultValue={applicationInformation.email}
                         />
                     </Field>
 

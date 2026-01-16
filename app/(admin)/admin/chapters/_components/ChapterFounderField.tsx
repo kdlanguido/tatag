@@ -10,12 +10,12 @@ import {
 } from "@/components/ui/dialog"
 import { Field, FieldLabel } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { DataTable } from "./UsersDataTable/Data-Table"
-import { columns } from "./UsersDataTable/Columns"
 import { useEffect, useState } from "react"
 import { fetchAllMembers } from "@/actions/user"
 import { UserI } from "@/model/User.model"
 import { useChapterStore } from "@/store/chapter.store"
+import { DataTable } from "./DataTable/User/Data-Table"
+import { columns } from "./DataTable/User/Columns"
 
 export function ChapterFounderField() {
 

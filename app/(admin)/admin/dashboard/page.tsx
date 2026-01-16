@@ -32,7 +32,7 @@ export default async function Page() {
                     <ApplicantTabs />
                 </div>
 
-                <div className="w-full">
+                {/* <div className="w-full">
                     <div className="mb-5 flex justify-between">
                         <div className="flex flex-col">
                             <h1 className="font-semibold">Chapter Events</h1>
@@ -40,7 +40,7 @@ export default async function Page() {
                         </div>
                     </div>
                     <ApplicantTabs />
-                </div>
+                </div> */}
             </div>
         </Suspense>
 

@@ -1,30 +1,15 @@
 'use server'
 
 import { connectToMongoDB } from "@/lib/mongoose";
-import { Batch, BatchI } from "@/model/Batch.model";
-import mongoose from "mongoose";
-
-const fetchBatchByChapterId = async (selectedChapterId: string): Promise<BatchI[]> => {
-    await connectToMongoDB();
-
-    const objectId = new mongoose.Types.ObjectId(selectedChapterId);
-
-    const batches = await Batch.find({ chapterId: objectId }).lean()
-
-    return JSON.parse(JSON.stringify(batches));
-}
+import { Batch, } from "@/model/Batch.model";
 
 const createBatch = async (prevState: GenericInitState, formData: FormData) => {
     await connectToMongoDB();
 
-    const pruebaDate = formData.get('pruebaDate')
-    const name = formData.get('name')
-    const chapterId = formData.get('chapterId')
-
     const res = await Batch.create({
-        name,
-        pruebaDate,
-        chapterId
+        name: formData.get('name'),
+        pruebaDate: formData.get('pruebaDate'),
+        chapterId: formData.get('chapterId')
     })
 
     if (!res) {
@@ -38,20 +23,39 @@ const createBatch = async (prevState: GenericInitState, formData: FormData) => {
     }
 }
 
-const checkIfBatchNameExists = async (name: string, _id: string): Promise<boolean> => {
-    await connectToMongoDB();
+const updateBatch = async (prevState: GenericInitState, formData: FormData) => {
+    try {
+        await connectToMongoDB();
 
-    const isExisting = await Batch.findOne({ name }).where({ _id });
+        const _id = formData.get('batchId') as string;
+        const name = formData.get('name') as string;
+        const rawDate = formData.get('pruebaDate') as string;
 
-    if (!isExisting) {
-        return false
+        if (!_id) return { success: false, error: "Missing ID" };
+
+        const res = await Batch.findByIdAndUpdate(
+            _id,
+            {
+                $set: {
+                    name: name,
+                    pruebaDate: rawDate ? new Date(rawDate) : null,
+                    status: formData.get('status')
+                }
+            },
+            { new: true } 
+        );
+
+        if (!res) return { success: false };
+
+        return { success: true };
+        
+    } catch (error) {
+        console.error("Update Error:", error);
+        return { success: false };
     }
-
-    return true
 }
 
 export {
-    fetchBatchByChapterId,
     createBatch,
-    checkIfBatchNameExists
+    updateBatch
 }

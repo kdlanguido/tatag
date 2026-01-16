@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Eye, MoreHorizontal, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button"
-import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
 
 export function ActionButtons({ applicant }: { applicant: UserIUI }) {

@@ -1,10 +1,7 @@
 import { Suspense } from 'react'
 import { fetchChapters } from '@/actions/chapter'
-import { Button } from '@/components/ui/button'
-import { Plus } from 'lucide-react'
-import ChapterCard from '@/components/admins/Chapters/ChapterCard'
-import Link from 'next/link'
 import { fetchProfile } from '@/actions/user'
+import ChapterCard from './_components/ChapterCard'
 
 export default async function Page() {
 
@@ -20,14 +17,16 @@ export default async function Page() {
                             <h1 className="font-semibold">Chapters List</h1>
                             <h1 className=" text-sm text-muted-foreground">Manage Titan Arms Chapters</h1>
                         </div>
-                        <Link href="/admin/chapters/create">
+                        
+                        {/* <Link href="/admin/chapters/create">
                             <Button>
                                 <p className='hidden md:block'>
                                     Create
                                 </p>
                                 <Plus />
                             </Button>
-                        </Link>
+                        </Link> */}
+
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
                         {

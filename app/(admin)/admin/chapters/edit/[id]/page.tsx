@@ -1,8 +1,7 @@
 import { Suspense } from 'react'
 import { fetchProfile } from '@/actions/user'
-import UpdateChapterForm from '@/components/admins/Chapters/Forms/UpdateChapterForm'
 import { fetchChapterById } from '@/actions/chapter'
-
+import UpdateChapterForm from '../../_components/Forms/UpdateChapterForm'
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
 

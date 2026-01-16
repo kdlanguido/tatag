@@ -9,8 +9,8 @@ import { Input } from "@/components/ui/input";
 import { ChapterI } from "@/model/Chapter.model";
 import { UserI } from "@/model/User.model";
 import { BatchI } from "@/model/Batch.model";
-import { fetchBatchByChapterId } from "@/actions/batch";
 import { createMembershipUpdateRequest } from "@/actions/user";
+import { fetchBatchByChapterId } from "@/app/(admin)/admin/_data/batch";
 
 export default function MembershipForm({
     chapters,
