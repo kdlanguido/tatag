@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HandFist } from "lucide-react";
 import Link from "next/link";
+import { fetchTrainingPercentageCompleted } from "../../_data/trainingChecklist";
 
-export default async function MyTraining({userId}:{userId:string}) {
+export default async function MyTraining({ userId }: { userId: string }) {
+
+    const percentageCompleted = await fetchTrainingPercentageCompleted(userId);
 
     return (
         <Card className="gap-3">
@@ -18,8 +21,8 @@ export default async function MyTraining({userId}:{userId:string}) {
 
             <CardContent>
                 <div className="flex gap-3 items-end">
-                    <p className="text-4xl font-bold text-muted-foreground">
-                        50%
+                    <p className={`text-4xl font-bold ${percentageCompleted === 100 ? "text-green-500" : "text-muted-foreground"}`}>
+                        {percentageCompleted}%
                     </p>
                     <p className="text-lg text-muted-foreground">
                         Completed

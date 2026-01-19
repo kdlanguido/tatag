@@ -1,6 +1,7 @@
 import { model, models, Schema } from "mongoose";
 
-interface TrainingChecklistI {
+export interface TrainingChecklistI {
+    _id?: string,
     userId: string,
     trainingName: string,
     approvedBy?: Schema.Types.ObjectId,
@@ -18,6 +19,7 @@ const schema = new Schema<TrainingChecklistI>({
     },
     approvedBy: {
         type: Schema.Types.ObjectId,
+        ref: 'User',
         required:false
     },
     dateApproved: {

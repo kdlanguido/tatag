@@ -1,7 +1,9 @@
+"use server"
 import { connectToMongoDB } from "@/lib/mongoose";
 import { TrainingChecklist } from "@/model/TrainingChecklist.model";
+import { revalidatePath } from "next/cache";
 
-const createChecklist = async (userId:string) => {
+const createChecklist = async (userId: string) => {
 
     try {
         await connectToMongoDB();
@@ -16,12 +18,12 @@ const createChecklist = async (userId:string) => {
             "Prueba De Fuerza",
         ]
 
-        trainingNames.forEach(async (trainingName,index) => {
+        trainingNames.forEach(async (trainingName, index) => {
             await TrainingChecklist.create({
                 userId,
                 trainingName: trainingName,
                 status: "pending",
-                orderNo : index+1
+                orderNo: index + 1
             })
         });
 
@@ -35,4 +37,21 @@ const createChecklist = async (userId:string) => {
     }
 }
 
-export { createChecklist };
+const markAsCompleted = async (formData: FormData) => {
+    try {
+        await connectToMongoDB();
+        const checklistId = formData.get("checklistId") as string;
+        const approvedBy = formData.get("approvedBy") as string;
+        const applicantId = formData.get("applicantId") as string;
+        await TrainingChecklist.findByIdAndUpdate(checklistId, {
+            status: "completed",
+            approvedBy,
+            dateApproved: new Date()
+        });
+        revalidatePath('/training-checklist/' + applicantId);
+    } catch (error) {
+       console.log(error);
+    }
+}
+
+export { createChecklist, markAsCompleted };

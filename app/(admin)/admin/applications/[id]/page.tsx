@@ -23,7 +23,7 @@ export default async function page({ params }: { params: Promise<{ id: string }>
                         <h1 className=" text-sm text-muted-foreground">View applicant information for your approval.</h1>
                     </div>
 
-                    <Link href={"/admin/dashboard"}>
+                    <Link href={"/admin/applicants"}>
                         <Button variant={"outline"} type='button'>
                             <Undo2 />
                             <p className='hidden md:block'>
