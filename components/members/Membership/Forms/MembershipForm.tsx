@@ -15,9 +15,11 @@ import { fetchBatchByChapterId } from "@/app/(admin)/admin/_data/batch";
 export default function MembershipForm({
     chapterList,
     profile,
+    initialBatches
 }: {
     chapterList: ChapterICustom[],
     profile: UserI,
+    initialBatches: BatchI[]
 }) {
 
     const [selectedChapter, setSelectedChapter] = useState(
@@ -26,7 +28,7 @@ export default function MembershipForm({
 
     const [selectedBatchId, setSelectedBatchId] = useState(profile?.membership?.batchId?.toString() || "0");
 
-    const [batchList, setBatches] = useState<BatchI[]>([])
+    const [batchList, setBatches] = useState<BatchI[]>(initialBatches)
 
     const [createMembershipUpdateState, createMembershipUpdateAction, createMembershipUpdateIsPending] = useActionState(createMembershipUpdateRequest, {
         success: false,
@@ -40,20 +42,6 @@ export default function MembershipForm({
         const res = await fetchBatchByChapterId(value)
         setBatches(res)
     }
-
-    useEffect(() => {
-        const initialFetchBatch = async () => {
-            const chapterIdTemp = chapterList[0]._id
-            const res = await fetchBatchByChapterId(chapterIdTemp?.toString() ?? "")
-
-            setBatches(res)
-
-            if (profile?.membership?.batchId) {
-                setSelectedBatchId(profile?.membership?.batchId.toString())
-            }
-        }
-        initialFetchBatch();
-    }, [])
 
     useEffect(() => {
         const executeFetchBatchByChapterId = async () => {
