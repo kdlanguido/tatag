@@ -25,7 +25,7 @@ export default async function Page({
     const batches = await fetchBatchByChapterId(id)
     const isAdmin = await checkIfUserIsChapterAdmin(id)
 
-    if(!chapterInfo){
+    if (!chapterInfo) {
         redirect("/admin/chapters")
     }
 
@@ -84,7 +84,8 @@ export default async function Page({
                                 <h3 className="scroll-m-20 pb-2 text-sm md:text-md font-semibold tracking-tight first:mt-0 mb-1">
                                     Chapter Officials
                                 </h3>
-                                {
+
+                                {/* {
                                     isAdmin &&
                                     <Link href={"/admin/batch/create/" + id}>
                                         <Button size={"sm"} className="text-xs mb-1">
@@ -94,9 +95,13 @@ export default async function Page({
                                             <UserCog />
                                         </Button>
                                     </Link>
-                                }
+                                } */}
                             </div>
-                            <ChapterOfficials />
+                            {/* <ChapterOfficials /> */}
+
+                            <p className="text-muted-foreground text-sm">
+                                Feature under development...
+                            </p>
                         </div>
 
                         <div className="w-full">

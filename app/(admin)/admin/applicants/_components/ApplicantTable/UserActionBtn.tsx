@@ -10,6 +10,7 @@ import {
 import { Contact, Dumbbell, Ellipsis, User, UserRoundCheck } from "lucide-react"
 import Link from "next/link"
 import { checkIfApplicantHasPendingTrainings } from "../../../_data/chapter";
+import { updateApplicationPromoteTomember } from "@/actions/user";
 
 export async function UserActionBtn(applicant: { applicant: UserIUI }) {
 
@@ -43,15 +44,21 @@ export async function UserActionBtn(applicant: { applicant: UserIUI }) {
                             View Training
                         </Link>
                     </DropdownMenuItem>
-                    {
-                        !hasPending ? <DropdownMenuItem asChild>
-                            <Link href={`/training-checklist/${applicant.applicant._id}`}>
-                                <UserRoundCheck className="mr-1 h-4 w-4" />
-                                Promote to a Member
-                            </Link>
-                        </DropdownMenuItem> : null
-                    }
 
+                    {
+                        !hasPending ?
+                            <DropdownMenuItem asChild>
+                                <form action={updateApplicationPromoteTomember}>
+                                    <input name="id" defaultValue={applicant.applicant._id} hidden/>
+                                    <button type="submit" className="flex items-center w-full">
+                                        <UserRoundCheck className="mr-1 h-4 w-4" />
+                                        Promote to a Member
+                                    </button>
+                                </form>
+                            </DropdownMenuItem>
+                            : null
+
+                    }
                 </DropdownMenuGroup>
             </DropdownMenuContent>
         </DropdownMenu>

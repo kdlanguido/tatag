@@ -8,6 +8,7 @@ import { Types } from "mongoose";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createChecklist } from "./trainingChecklist";
+import { revalidatePath } from "next/cache";
 
 const registerUser = async (prevState: RegisterUserState, formData: FormData) => {
     await connectToMongoDB()
@@ -93,14 +94,35 @@ const updateUserAcceptApplication = async (prevState: GenericInitState, formData
     if (!res) {
         return { success: false }
     }
-    
+
     const createRes = await createChecklist(id)
 
-    if((!createRes.success)) {
+    if ((!createRes.success)) {
         return { success: false }
     }
 
     return { success: true }
+}
+
+const updateApplicationPromoteTomember = async (formData: FormData) => {
+    await connectToMongoDB()
+
+    const id = formData.get("id") as string
+
+    const res = await User.findByIdAndUpdate(
+        id,
+        {
+            $set: {
+                "membership.memberLevel": "member",
+            },
+        },
+        { new: true }
+    )
+
+    if (!res) {
+    }
+
+    revalidatePath('/admin/applicants')
 }
 
 const createMembershipUpdateRequest = async (prevState: CreateMembershipUpdateInitState, formData: FormData) => {
@@ -401,5 +423,6 @@ export {
     fetchMembershipUpdateRequests,
     fetchActiveMembers,
     fetchAllMembers,
-    fetchApplicationInformation
+    fetchApplicationInformation,
+    updateApplicationPromoteTomember
 }
