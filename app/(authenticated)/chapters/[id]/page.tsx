@@ -69,7 +69,11 @@ export default async function Page({
                                     Chapter Officials
                                 </h3>
                             </div>
-                            <ChapterOfficials />
+                            {/* <ChapterOfficials /> */}
+
+                              <p className="text-muted-foreground text-sm">
+                                Feature under development...
+                            </p>
                         </div>
 
                         <div className="w-full">
