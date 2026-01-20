@@ -29,11 +29,11 @@ export function ActionButtons({ applicant }: { applicant: UserIUI }) {
                                 <Eye /> View Application
                             </Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem onSelect={() => { }} asChild>
+                        {/* <DropdownMenuItem onSelect={() => { }} asChild>
                             <Link href={`/admin/applications/${applicant._id}`} className="flex items-center gap-1">
                                 <UserPlus /> Promote to Member
                             </Link>
-                        </DropdownMenuItem>
+                        </DropdownMenuItem> */}
                     </>
                 </DropdownMenuContent>
             </DropdownMenu>
