@@ -1,4 +1,4 @@
-import { Undo, Undo2 } from 'lucide-react';
+import { Undo2 } from 'lucide-react';
 import { fetchTrainingChecklist } from '../../_data/trainingChecklist';
 import { checkIfUserIsAdmin, fetchUserProfileById } from '../../_data/user';
 import ChecklistDT from '../_components/ChecklistDT/Table';

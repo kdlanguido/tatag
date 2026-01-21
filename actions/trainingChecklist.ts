@@ -40,15 +40,19 @@ const createChecklist = async (userId: string) => {
 const markAsCompleted = async (formData: FormData) => {
     try {
         await connectToMongoDB();
+
         const checklistId = formData.get("checklistId") as string;
         const approvedBy = formData.get("approvedBy") as string;
         const applicantId = formData.get("applicantId") as string;
+
         await TrainingChecklist.findByIdAndUpdate(checklistId, {
             status: "completed",
             approvedBy,
             dateApproved: new Date()
         });
+        
         revalidatePath('/training-checklist/' + applicantId);
+
     } catch (error) {
        console.log(error);
     }

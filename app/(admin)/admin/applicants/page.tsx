@@ -10,7 +10,7 @@ interface PageProps {
 }
 
 // ISR
-export const revalidate = 1800;
+export const revalidate = 10;
 
 export default async function Page({ searchParams }: PageProps) {
     const { query } = await searchParams;

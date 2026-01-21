@@ -9,6 +9,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createChecklist } from "./trainingChecklist";
 import { revalidatePath } from "next/cache";
+import { TrainingChecklist } from "@/model/TrainingChecklist.model";
 
 const registerUser = async (prevState: RegisterUserState, formData: FormData) => {
     await connectToMongoDB()
@@ -111,15 +112,19 @@ const updateApplicationPromoteTomember = async (formData: FormData) => {
 
     const res = await User.findByIdAndUpdate(
         id,
-        {
-            $set: {
-                "membership.memberLevel": "member",
-            },
-        },
+        { $set: { "membership.memberLevel": "member" } },
         { new: true }
     )
 
     if (!res) {
+        console.log("Encountered error during ACTION:updateApplicationPromoteTomember")
+        return 
+    }
+
+    const deleteRes = await TrainingChecklist.deleteMany({ userId: id })
+
+    if (!deleteRes) {
+        console.log("Encountered error during ACTION:updateApplicationPromoteTomember.delete")
     }
 
     revalidatePath('/admin/applicants')

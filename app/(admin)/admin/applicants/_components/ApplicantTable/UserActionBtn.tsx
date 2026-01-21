@@ -7,7 +7,7 @@ import {
     DropdownMenuLabel,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Contact, Dumbbell, Ellipsis, User, UserRoundCheck } from "lucide-react"
+import { Contact, Dumbbell, Ellipsis, UserRoundCheck } from "lucide-react"
 import Link from "next/link"
 import { checkIfApplicantHasPendingTrainings } from "../../../_data/chapter";
 import { updateApplicationPromoteTomember } from "@/actions/user";
@@ -42,12 +42,12 @@ export async function UserActionBtn(applicant: { applicant: UserIUI }) {
                     </DropdownMenuItem>
 
                     {
-                        applicant.applicant.membership.memberStatus === 'applicant' && !hasPending ?
+                        applicant.applicant.membership.memberLevel === 'applicant' && !hasPending ?
                             <DropdownMenuItem asChild>
                                 <form action={updateApplicationPromoteTomember}>
                                     <input name="id" defaultValue={applicant.applicant._id} hidden />
                                     <button type="submit" className="flex items-center w-full">
-                                        <UserRoundCheck className="mr-1 h-4 w-4" />
+                                        <UserRoundCheck className="mr-3 h-4 w-4" />
                                         Promote to a Member
                                     </button>
                                 </form>
