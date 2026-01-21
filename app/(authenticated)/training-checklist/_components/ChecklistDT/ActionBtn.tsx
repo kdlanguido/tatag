@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { TrainingChecklistICustom } from "@/types/trainingChecklist"
 import { Check, Ellipsis } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { useTransition } from "react"
 import { toast } from "sonner"
 
@@ -25,6 +26,7 @@ export function ChecklistActionBtn({
   approvedBy: string
 }) {
   const [isPending, startTransition] = useTransition()
+  const router = useRouter()
 
   const handleMarkCompleted = () => {
     const toastId = toast.loading("Processing training completion...")
@@ -37,6 +39,7 @@ export function ChecklistActionBtn({
         formData.append("applicantId", applicantId)
 
         await markAsCompleted(formData)
+        router.refresh()
 
         toast.success("Training marked as completed", {
           id: toastId,
