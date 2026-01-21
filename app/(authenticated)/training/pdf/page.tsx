@@ -1,5 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { Suspense } from 'react'
+
+export const dynamic = "force-static"
 
 export default async function Page() {
 
@@ -53,7 +54,7 @@ export default async function Page() {
             <div>
                 <p className=" text-sm text-muted-foreground text-justify">
                     Should you fail to pass the Prueba de Fuerza, remember that this is not the end of your journey with the Titan Arms Brotherhood. Use this experience as a
-                    stepping stone. Seek feedback from your opponent and the admins to identify areas for growth. 
+                    stepping stone. Seek feedback from your opponent and the admins to identify areas for growth.
                     Focus on honing your technique and building your strength. We encourage you to continue training until an admin reaches out to you for another opportunity.
                 </p>
             </div>
@@ -61,57 +62,55 @@ export default async function Page() {
     )
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <div className='flex flex-1 flex-col gap-4 p-4'>
-                <div className="w-full md:w-1/2">
-                    <div className="mb-5 flex justify-between">
-                        <div className="flex flex-col">
-                            <h1 className="font-semibold">Training 4 : Prueba De Fuerza</h1>
-                            <h1 className=" text-sm text-muted-foreground">Final step as an applicant</h1>
-                        </div>
+        <div className='flex flex-1 flex-col gap-4 p-4'>
+            <div className="w-full md:w-1/2">
+                <div className="mb-5 flex justify-between">
+                    <div className="flex flex-col">
+                        <h1 className="font-semibold">Training 4 : Prueba De Fuerza</h1>
+                        <h1 className=" text-sm text-muted-foreground">Final step as an applicant</h1>
                     </div>
-
-                    <Accordion type="single"
-                        collapsible
-                        className="w-full"
-                        defaultValue="item-1">
-                        <AccordionItem value="item-1">
-                            <AccordionTrigger>Introduction</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4">
-                                {
-                                    coc.map((data, index) =>
-                                        <div key={index}>
-                                            {
-                                                data.descriptions.map((description, descriptionCount) =>
-                                                    <h1 key={descriptionCount} className="text-justify text-sm text-muted-foreground mb-4">
-                                                        {description.info}
-                                                    </h1>
-                                                )
-                                            }
-                                        </div>
-                                    )
-                                }
-                            </AccordionContent>
-                        </AccordionItem>
-
-                        <AccordionItem value="item-2">
-                            <AccordionTrigger>How to qualify for the Prueba De Fuerza?</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4">
-                                <HowToQualify />
-                            </AccordionContent>
-                        </AccordionItem>
-
-                        <AccordionItem value="item-3">
-                            <AccordionTrigger>What if i fail the Prueba De Fuerza?</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4">
-                                <WhatIfFailed />
-                            </AccordionContent>
-                        </AccordionItem>
-
-                    </Accordion>
-
                 </div>
+
+                <Accordion type="single"
+                    collapsible
+                    className="w-full"
+                    defaultValue="item-1">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>Introduction</AccordionTrigger>
+                        <AccordionContent className="flex flex-col gap-4">
+                            {
+                                coc.map((data, index) =>
+                                    <div key={index}>
+                                        {
+                                            data.descriptions.map((description, descriptionCount) =>
+                                                <h1 key={descriptionCount} className="text-justify text-sm text-muted-foreground mb-4">
+                                                    {description.info}
+                                                </h1>
+                                            )
+                                        }
+                                    </div>
+                                )
+                            }
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How to qualify for the Prueba De Fuerza?</AccordionTrigger>
+                        <AccordionContent className="flex flex-col gap-4">
+                            <HowToQualify />
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>What if i fail the Prueba De Fuerza?</AccordionTrigger>
+                        <AccordionContent className="flex flex-col gap-4">
+                            <WhatIfFailed />
+                        </AccordionContent>
+                    </AccordionItem>
+
+                </Accordion>
+
             </div>
-        </Suspense>
+        </div>
     )
 }

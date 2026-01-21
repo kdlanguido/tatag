@@ -1,5 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { Suspense } from 'react'
+
+export const dynamic = "force-static"
 
 export default async function Page() {
 
@@ -120,69 +121,64 @@ export default async function Page() {
     )
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <div className='flex flex-1 flex-col gap-4 p-4'>
-                <div className="w-full md:w-1/2">
-                    <div className="mb-5 flex justify-between">
-                        <div className="flex flex-col">
-                            <h1 className="font-semibold">Training 1 : Orientation</h1>
-                            <h1 className=" text-sm text-muted-foreground">Initial step as applicant</h1>
-                        </div>
+        <div className='flex flex-1 flex-col gap-4 p-4'>
+            <div className="w-full md:w-1/2">
+                <div className="mb-5 flex justify-between">
+                    <div className="flex flex-col">
+                        <h1 className="font-semibold">Training 1 : Orientation</h1>
+                        <h1 className=" text-sm text-muted-foreground">Initial step as applicant</h1>
                     </div>
+                </div>
 
-                    <Accordion type="single"
-                        collapsible
-                        className="w-full"
-                        defaultValue="item-1">
-                        <AccordionItem value="item-1">
-                            <AccordionTrigger>Introduction</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4">
-                                {
-                                    items.map((data, index) =>
-                                        <div key={index}>
-                                            {
-                                                data.descriptions.map((description, descriptionCount) => <h1 key={descriptionCount} className="text-justify text-sm text-muted-foreground mb-4">
+                <Accordion type="single"
+                    collapsible
+                    className="w-full"
+                    defaultValue="item-1">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger>Introduction</AccordionTrigger>
+                        <AccordionContent className="flex flex-col gap-4">
+                            {
+                                items.map((data, index) =>
+                                    <div key={index}>
+                                        {
+                                            data.descriptions.map((description, descriptionCount) => <h1 key={descriptionCount} className="text-justify text-sm text-muted-foreground mb-4">
+                                                {description.info}
+                                            </h1>
+                                            )
+                                        }
+                                    </div>
+                                )
+                            }
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="item-2">
+                        <AccordionTrigger>How to be a member?</AccordionTrigger>
+                        <AccordionContent className="flex flex-col gap-4">
+                            <HowToBeAMember />
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="item-3">
+                        <AccordionTrigger>Code of Conduct</AccordionTrigger>
+                        <AccordionContent className="flex flex-col gap-4">
+                            {
+                                coc.map((data, index) =>
+                                    <div key={index}>
+                                        {
+                                            data.descriptions.map((description, descriptionCount) =>
+                                                <h1 key={descriptionCount} className="text-justify text-sm text-muted-foreground mb-4">
                                                     {description.info}
                                                 </h1>
-                                                )
-                                            }
-                                        </div>
-                                    )
-                                }
-                            </AccordionContent>
-                        </AccordionItem>
-
-                        <AccordionItem value="item-2">
-                            <AccordionTrigger>How to be a member?</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4">
-                                <HowToBeAMember />
-                            </AccordionContent>
-                        </AccordionItem>
-
-                        <AccordionItem value="item-3">
-                            <AccordionTrigger>Code of Conduct</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4">
-                                {
-                                    coc.map((data, index) =>
-                                        <div key={index}>
-                                            {
-                                                data.descriptions.map((description, descriptionCount) =>
-                                                    <h1 key={descriptionCount} className="text-justify text-sm text-muted-foreground mb-4">
-                                                        {description.info}
-                                                    </h1>
-                                                )
-                                            }
-                                        </div>
-                                    )
-                                }
-                            </AccordionContent>
-                        </AccordionItem>
-
-                    </Accordion>
-
-
-                </div>
+                                            )
+                                        }
+                                    </div>
+                                )
+                            }
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
             </div>
-        </Suspense>
+        </div>
     )
 }

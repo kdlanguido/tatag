@@ -18,7 +18,6 @@ export async function ChecklistActionBtn({ checklist, applicantId }: { checklist
     return (
 
         <>
-
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Button variant="ghost"><Ellipsis className="h-4 w-4" /></Button>
@@ -40,13 +39,11 @@ export async function ChecklistActionBtn({ checklist, applicantId }: { checklist
                     </DropdownMenuGroup>
                 </DropdownMenuContent>
             </DropdownMenu>
-
             <form id={`form-${checklist._id}`} method="post">
                 <input type="hidden" name="checklistId" value={checklist._id} />
                 <input type="hidden" name="approvedBy" value={currentUser._id} />
                 <input type="hidden" name="applicantId" value={applicantId} />
             </form>
-
         </>
     )
 }
