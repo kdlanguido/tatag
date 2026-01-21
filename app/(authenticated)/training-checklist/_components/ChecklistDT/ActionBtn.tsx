@@ -1,5 +1,5 @@
 import { markAsCompleted } from "@/actions/trainingChecklist"
-import { fetchUserProfile } from "@/app/(authenticated)/_data/user"
+import { cachedCurrentUserProfile, fetchUserProfile } from "@/app/(authenticated)/_data/user"
 import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
@@ -13,8 +13,8 @@ import { TrainingChecklistICustom } from "@/types/trainingChecklist"
 import { Check, Ellipsis } from "lucide-react"
 
 export async function ChecklistActionBtn({ checklist, applicantId }: { checklist: TrainingChecklistICustom, applicantId: string }) {
-    
-    const currentUser = await fetchUserProfile()
+
+    const { _id } = await cachedCurrentUserProfile()
 
     return (
 
@@ -32,7 +32,7 @@ export async function ChecklistActionBtn({ checklist, applicantId }: { checklist
                             <button
                                 type="submit"
                                 formAction={markAsCompleted}
-                                form={`form-${checklist._id}`} // link to hidden form
+                                form={`form-${checklist._id}`}
                                 className="flex items-center gap-2 w-full"
                             >
                                 <Check className="mr-2 h-4 w-4" />
@@ -44,7 +44,7 @@ export async function ChecklistActionBtn({ checklist, applicantId }: { checklist
             </DropdownMenu>
             <form id={`form-${checklist._id}`} method="post">
                 <input type="hidden" name="checklistId" value={checklist._id} />
-                <input type="hidden" name="approvedBy" value={currentUser._id} />
+                <input type="hidden" name="approvedBy" value={_id} />
                 <input type="hidden" name="applicantId" value={applicantId} />
             </form>
         </>

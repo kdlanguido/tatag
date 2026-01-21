@@ -1,5 +1,5 @@
 import { Undo2 } from 'lucide-react';
-import { cachedCurrentUserProfile, checkIfUserIsAdmin, fetchUserProfileById } from '../../_data/user';
+import { cachedCurrentUserProfile} from '../../_data/user';
 import { ChecklistDT } from '../_components/ChecklistDT/Table';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -9,8 +9,6 @@ export default async function page({ params }: { params: Promise<{ id: string }>
     const { id } = await params;
     const { membership, nickname } = await cachedCurrentUserProfile()
     const isAdmin = membership.memberLevel === 'admin'
-    // const checklist = await fetchTrainingChecklist(id);
-    // const user = await fetchUserProfileById(id);
 
     return (
         <div className='flex flex-1 flex-col gap-4 p-4'>
