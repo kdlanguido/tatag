@@ -16,6 +16,8 @@ const cachedCurrentUserProfile = async (): Promise<UserI> => {
     const cached = await redis?.get(key)
     if (cached) return JSON.parse(cached) as UserI
 
+    await connectToMongoDB();
+
     const profile = await User.findOne({ email: session?.user?.email }).lean() as UserI | null
 
     if (!profile) {
