@@ -8,13 +8,19 @@ import {
 } from "@/components/ui/table"
 import { ChecklistActionBtn } from "./ActionBtn"
 import { formatDateToString } from "@/lib/helpers"
-import { TrainingChecklistICustom } from "@/types/trainingChecklist"
 import { Suspense } from "react"
 import { ChecklistTableSkeleton } from "./Skeleton"
 import { fetchTrainingChecklist } from "@/app/(authenticated)/_data/trainingChecklist"
+import { cachedCurrentUserProfile } from "@/app/(authenticated)/_data/user"
+import { redirect } from "next/navigation"
 
-export async function ChecklistDT({ isAdmin, applicantId }: {  isAdmin: boolean, applicantId: string }) {
+export async function ChecklistDT({ isAdmin, applicantId }: { isAdmin: boolean, applicantId: string }) {
+  
   const checklistItems = await fetchTrainingChecklist(applicantId);
+  const { _id } = await cachedCurrentUserProfile()
+
+  if (!_id) redirect("/login")
+
   return (
     <Suspense fallback={<ChecklistTableSkeleton />}>
       <div className="rounded-md border bg-card text-card-foreground shadow-sm">
@@ -36,7 +42,7 @@ export async function ChecklistDT({ isAdmin, applicantId }: {  isAdmin: boolean,
                 <TableCell className="text-center">{checklist.approvedBy ? checklist.approvedBy.nickname : "--"}</TableCell>
                 <TableCell className="capitalize text-center">{checklist.status}</TableCell>
                 <TableCell className="text-center" hidden={!isAdmin}>
-                  <ChecklistActionBtn checklist={checklist} applicantId={applicantId} />
+                  <ChecklistActionBtn checklist={checklist} applicantId={applicantId} approvedBy={_id} />
                 </TableCell>
               </TableRow>
             ))}

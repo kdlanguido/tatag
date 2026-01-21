@@ -1,9 +1,7 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 export const ChecklistTableSkeleton = () => {
-  // Number of skeleton rows to show
   const skeletonRows = Array.from({ length: 5 })
-
   return (
     <Table>
       <TableHeader>
@@ -21,22 +19,18 @@ export const ChecklistTableSkeleton = () => {
             key={index}
             className="hover:bg-muted/50 transition-colors"
           >
-            {/* Training Name */}
             <TableCell>
               <div className="h-4 bg-gray-300 rounded w-3/4 animate-pulse"></div>
             </TableCell>
 
-            {/* Date Approved */}
             <TableCell className="text-center">
               <div className="h-4 bg-gray-300 rounded w-1/2 mx-auto animate-pulse"></div>
             </TableCell>
 
-            {/* Approved By */}
             <TableCell className="text-center">
               <div className="h-4 bg-gray-300 rounded w-1/2 mx-auto animate-pulse"></div>
             </TableCell>
 
-            {/* Status */}
             <TableCell className="text-center">
               <div className="h-4 bg-gray-300 rounded w-1/3 mx-auto animate-pulse"></div>
             </TableCell>
