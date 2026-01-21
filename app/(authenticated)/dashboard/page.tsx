@@ -11,13 +11,13 @@ import { cachedCurrentUserProfile } from "../_data/user";
 export default async function Page() {
 
     const session = await auth.api.getSession({ headers: await headers() })
-    const { _id } = await cachedCurrentUserProfile();
 
     if (!session) {
         redirect("/login")
     }
 
     const userExists = await checkIfUserExists()
+    
     if (!userExists) {
         await auth.api.signOut({ headers: await headers() });
         redirect("/register")
@@ -27,6 +27,8 @@ export default async function Page() {
     if (!userHasClub) {
         redirect("/membership")
     }
+
+    const { _id } = await cachedCurrentUserProfile();
 
     return (
 

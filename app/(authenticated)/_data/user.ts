@@ -21,10 +21,10 @@ const cachedCurrentUserProfile = async (): Promise<UserI> => {
     const profile = await User.findOne({ email: session?.user?.email }).lean() as UserI | null
 
     if (!profile) {
-        redirect("/login")
+        redirect("/register")
     }
 
-    await redis?.set(key, JSON.stringify(profile), "EX", 300) // 5 mins
+    await redis?.set(key, JSON.stringify(profile), "EX", 300) 
 
     return profile
 }

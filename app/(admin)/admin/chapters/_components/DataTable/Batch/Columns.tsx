@@ -6,7 +6,6 @@ import { BatchI } from "@/model/Batch.model";
 import { ActionButtons } from "./ActionButtons";
 
 export const columns: ColumnDef<BatchI>[] = [
-
     {
         accessorKey: "name",
         header: "Batch",
