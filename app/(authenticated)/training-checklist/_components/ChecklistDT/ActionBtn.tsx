@@ -13,6 +13,7 @@ import { TrainingChecklistICustom } from "@/types/trainingChecklist"
 import { Check, Ellipsis } from "lucide-react"
 
 export async function ChecklistActionBtn({ checklist, applicantId }: { checklist: TrainingChecklistICustom, applicantId: string }) {
+    
     const currentUser = await fetchUserProfile()
 
     return (
@@ -20,7 +21,9 @@ export async function ChecklistActionBtn({ checklist, applicantId }: { checklist
         <>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="ghost"><Ellipsis className="h-4 w-4" /></Button>
+                    <Button variant="ghost">
+                        <Ellipsis className="h-4 w-4" />
+                    </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end">
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>

@@ -2,7 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 export const dynamic = "force-static"
 
-export default async function Page() {
+export default function Page() {
 
     const WhatIsToproll = () => (
         <div className='flex flex-col gap-4 w-full'>

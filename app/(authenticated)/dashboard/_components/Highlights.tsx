@@ -1,26 +1,26 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Trophy } from "lucide-react"
 import { Suspense } from "react"
-import { getHighlights } from "../_lib/highlights"
+// import { getHighlights } from "../_lib/highlights"
 
-async function HighlightsList() {
-    // This is the "Cache" part - the data fetching is scoped here
-    const highlights = await getHighlights()
+// async function HighlightsList() {
+//     // This is the "Cache" part - the data fetching is scoped here
+//     // const highlights = await getHighlights()
 
-    if (!highlights || highlights.length === 0) {
-        return <p className="text-sm text-muted-foreground">No highlights yet.</p>
-    }
+//     if (!highlights || highlights.length === 0) {
+//         return <p className="text-sm text-muted-foreground">No highlights yet.</p>
+//     }
 
-    return (
-        <div className="flex flex-col gap-2">
-            {highlights.map((item) => (
-                <div key={item.id} className="text-sm border-b pb-2 last:border-0">
-                    {item.title}
-                </div>
-            ))}
-        </div>
-    )
-}
+//     return (
+//         <div className="flex flex-col gap-2">
+//             {highlights.map((item) => (
+//                 <div key={item.id} className="text-sm border-b pb-2 last:border-0">
+//                     {item.title}
+//                 </div>
+//             ))}
+//         </div>
+//     )
+// }
 
 // Loading Skeleton
 function HighlightsSkeleton() {
@@ -46,7 +46,7 @@ export default function HighlightsContainer() {
             <CardContent>
                 {/* Suspense allows the rest of the page to render while this fetches */}
                 <Suspense fallback={<HighlightsSkeleton />}>
-                    <HighlightsList />
+                    {/* <HighlightsList /> */}
                 </Suspense>
             </CardContent>
         </Card>

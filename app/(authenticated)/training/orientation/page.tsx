@@ -2,7 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 export const dynamic = "force-static"
 
-export default async function Page() {
+export default function Page() {
 
     const items = [
         {

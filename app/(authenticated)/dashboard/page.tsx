@@ -6,12 +6,12 @@ import MarketplaceCard from "@/app/(authenticated)/dashboard/_components/Marketp
 import MembersFeed from "@/app/(authenticated)/dashboard/_components/MembersFeed";
 import HighlightsContainer from "@/app/(authenticated)/dashboard/_components/Highlights";
 import MyTraining from "@/app/(authenticated)/dashboard/_components/MyTraining";
-import { fetchUserProfile } from "../_data/user";
+import { cachedCurrentUserProfile } from "../_data/user";
 
 export default async function Page() {
 
     const session = await auth.api.getSession({ headers: await headers() })
-    const userProfile = await fetchUserProfile(session?.user?.email || "");
+    const { _id } = await cachedCurrentUserProfile();
 
     if (!session) {
         redirect("/login")
@@ -32,7 +32,7 @@ export default async function Page() {
 
         <div className="flex flex-1 flex-col gap-4 p-4">
             <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                <MyTraining userId={userProfile._id ?? ""} />
+                <MyTraining userId={_id ?? ""} />
                 <HighlightsContainer />
                 <MarketplaceCard />
             </div>
