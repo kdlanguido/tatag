@@ -5,9 +5,14 @@ import { connectToMongoDB } from "@/lib/mongoose"
 import { User, UserI } from "@/model/User.model"
 import { headers } from "next/headers"
 import { redirect } from "next/navigation"
+import { cache } from "react"
+import { redis } from "@/lib/redis"
 
 
-const fetchProfile = async (id?: string): Promise<UserI> => {
+const fetchProfile = cache(async (id?: string): Promise<UserI> => {
+
+    console.log('fetchProfile executed! ')
+
     await connectToMongoDB()
 
     const session = await auth.api.getSession({ headers: await headers() })
@@ -24,6 +29,6 @@ const fetchProfile = async (id?: string): Promise<UserI> => {
         return JSON.parse(JSON.stringify(profile));
     }
 
-}
+})
 
 export { fetchProfile }

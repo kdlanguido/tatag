@@ -1,27 +1,19 @@
+import { Suspense } from "react";
 import SearchInput from "@/components/general/SearchInput";
 import { fetchChapterApplicants } from "../_data/chapter";
 import { fetchProfile } from "../_data/user";
 import ApplicantTable from "./_components/ApplicantTable/Table";
+import TableSkeleton from "./_components/ApplicantTable/Skeleton";
 
 interface PageProps {
     searchParams: Promise<{ query?: string }>
 }
 
-export default async function page({ searchParams }: PageProps) {
+// ISR
+export const revalidate = 1800;
 
+export default async function Page({ searchParams }: PageProps) {
     const { query } = await searchParams;
-
-    const { membership } = await fetchProfile();
-
-    if (!membership) {
-        return null;
-    }
-
-    const data = await fetchChapterApplicants(membership.chapterId?.toString());
-
-    const users = data.filter(user =>
-        !query || user.nickname.toLowerCase().includes(query.toLowerCase())
-    );
 
     return (
         <div className="w-full flex flex-col gap-4 p-4">
@@ -32,7 +24,23 @@ export default async function page({ searchParams }: PageProps) {
                 </div>
                 <SearchInput />
             </div>
-            <ApplicantTable applicants={users} />
+           
+            <Suspense key={query} fallback={<TableSkeleton />}>
+                <ApplicantListContent query={query} />
+            </Suspense>
         </div>
     );
+}
+
+async function ApplicantListContent({ query }: { query?: string }) {
+    const { membership } = await fetchProfile();
+    if (!membership) return <div>Access Denied</div>;
+
+    const data = await fetchChapterApplicants(membership.chapterId?.toString());
+
+    const filteredApplicants = data.filter(user =>
+        !query || user.nickname.toLowerCase().includes(query.toLowerCase())
+    );
+
+    return <ApplicantTable applicants={filteredApplicants} />;
 }

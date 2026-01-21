@@ -10,7 +10,6 @@ import { UserActionBtn } from "./UserActionBtn"
 import { formatDateToString } from "@/lib/helpers"
 
 export default function ApplicantTable({ applicants }: { applicants: UserIUI[] }) {
-  console.log(applicants)
   return (
     <div className="rounded-md border bg-card text-card-foreground shadow-sm">
       <Table>

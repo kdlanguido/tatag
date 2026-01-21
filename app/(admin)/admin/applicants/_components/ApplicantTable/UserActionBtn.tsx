@@ -28,10 +28,6 @@ export async function UserActionBtn(applicant: { applicant: UserIUI }) {
             <DropdownMenuContent className="w-56" align="end">
                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
                 <DropdownMenuGroup>
-                    <DropdownMenuItem>
-                        <User className="mr-1 h-4 w-4" />
-                        View Profile
-                    </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                         <Link href={`/admin/applications/${applicant.applicant._id}`}>
                             <Contact className="mr-1 h-4 w-4" />
@@ -46,10 +42,10 @@ export async function UserActionBtn(applicant: { applicant: UserIUI }) {
                     </DropdownMenuItem>
 
                     {
-                        !hasPending ?
+                        applicant.applicant.membership.memberStatus === 'applicant' && !hasPending ?
                             <DropdownMenuItem asChild>
                                 <form action={updateApplicationPromoteTomember}>
-                                    <input name="id" defaultValue={applicant.applicant._id} hidden/>
+                                    <input name="id" defaultValue={applicant.applicant._id} hidden />
                                     <button type="submit" className="flex items-center w-full">
                                         <UserRoundCheck className="mr-1 h-4 w-4" />
                                         Promote to a Member

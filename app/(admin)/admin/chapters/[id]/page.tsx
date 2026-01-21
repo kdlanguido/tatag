@@ -21,6 +21,7 @@ export default async function Page({
 }) {
 
     const { id } = await params
+    
     const chapterInfo = await fetchChapterById(id)
     const batches = await fetchBatchByChapterId(id)
     const isAdmin = await checkIfUserIsChapterAdmin(id)

@@ -2,7 +2,7 @@
 
 import { connectToMongoDB } from "@/lib/mongoose"
 import { Batch, BatchI } from "@/model/Batch.model";
-import { ObjectId, Types } from "mongoose";
+import {Types } from "mongoose";
 
 export const fetchBatchById = async (batchId: string) => {
     await connectToMongoDB();
