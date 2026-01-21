@@ -31,7 +31,7 @@ export default function ApplicationForm({ applicationInformation, batches, admin
                 description: "Applicant has been accepted successfully.",
             })
 
-            router.push("/admin/dashboard")
+            router.push("/admin/applicants")
         }
     }, [state])
 

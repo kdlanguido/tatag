@@ -10,7 +10,7 @@ interface PageProps {
 }
 
 // ISR
-export const revalidate = 10;
+export const revalidate = 20;
 
 export default async function Page({ searchParams }: PageProps) {
     const { query } = await searchParams;
@@ -24,7 +24,6 @@ export default async function Page({ searchParams }: PageProps) {
                 </div>
                 <SearchInput />
             </div>
-           
             <Suspense key={query} fallback={<TableSkeleton />}>
                 <ApplicantListContent query={query} />
             </Suspense>
@@ -33,7 +32,9 @@ export default async function Page({ searchParams }: PageProps) {
 }
 
 async function ApplicantListContent({ query }: { query?: string }) {
+
     const { membership } = await fetchProfile();
+
     if (!membership) return <div>Access Denied</div>;
 
     const data = await fetchChapterApplicants(membership.chapterId?.toString());

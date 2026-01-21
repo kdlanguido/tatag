@@ -18,7 +18,11 @@ export async function UserActionBtn(applicant: { applicant: UserIUI }) {
         return null
     }
 
+
     const hasPending = await checkIfApplicantHasPendingTrainings(applicant.applicant._id);
+
+    console.log("Applicant has pending ? : "+ hasPending)
+    console.log(applicant.applicant.membership.memberLevel)
 
     return (
         <DropdownMenu>
@@ -42,7 +46,7 @@ export async function UserActionBtn(applicant: { applicant: UserIUI }) {
                     </DropdownMenuItem>
 
                     {
-                        applicant.applicant.membership.memberLevel === 'applicant' && !hasPending ?
+                        applicant.applicant.membership.memberStatus !== 'new' && !hasPending ?
                             <DropdownMenuItem asChild>
                                 <form action={updateApplicationPromoteTomember}>
                                     <input name="id" defaultValue={applicant.applicant._id} hidden />
@@ -53,7 +57,6 @@ export async function UserActionBtn(applicant: { applicant: UserIUI }) {
                                 </form>
                             </DropdownMenuItem>
                             : null
-
                     }
                 </DropdownMenuGroup>
             </DropdownMenuContent>

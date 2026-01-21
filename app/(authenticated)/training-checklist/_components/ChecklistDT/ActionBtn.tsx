@@ -12,34 +12,41 @@ import {
 import { TrainingChecklistICustom } from "@/types/trainingChecklist"
 import { Check, Ellipsis } from "lucide-react"
 
-export async function ChecklistActionBtn({checklist, applicantId}: { checklist: TrainingChecklistICustom, applicantId: string }) {
+export async function ChecklistActionBtn({ checklist, applicantId }: { checklist: TrainingChecklistICustom, applicantId: string }) {
     const currentUser = await fetchUserProfile()
 
     return (
-        <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button variant="ghost"><Ellipsis className="h-4 w-4" /></Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56" align="end">
-                <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                <DropdownMenuGroup>
-                    <DropdownMenuItem asChild>
-                        <form className="w-full">
-                            <input type="hidden" name="checklistId" value={checklist._id} />
-                            <input type="hidden" name="approvedBy" value={currentUser._id} />
-                            <input type="hidden" name="applicantId" value={applicantId} />
+
+        <>
+
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="ghost"><Ellipsis className="h-4 w-4" /></Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56" align="end">
+                    <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                    <DropdownMenuGroup>
+                        <DropdownMenuItem asChild>
                             <button
                                 type="submit"
                                 formAction={markAsCompleted}
-                                className="flex items-center gap-2"
+                                form={`form-${checklist._id}`} // link to hidden form
+                                className="flex items-center gap-2 w-full"
                             >
                                 <Check className="mr-2 h-4 w-4" />
                                 <span>Mark as Completed</span>
                             </button>
-                        </form>
-                    </DropdownMenuItem>
-                </DropdownMenuGroup>
-            </DropdownMenuContent>
-        </DropdownMenu>
+                        </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                </DropdownMenuContent>
+            </DropdownMenu>
+
+            <form id={`form-${checklist._id}`} method="post">
+                <input type="hidden" name="checklistId" value={checklist._id} />
+                <input type="hidden" name="approvedBy" value={currentUser._id} />
+                <input type="hidden" name="applicantId" value={applicantId} />
+            </form>
+
+        </>
     )
 }

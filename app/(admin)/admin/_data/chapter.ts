@@ -94,7 +94,6 @@ const fetchChapterApplicants = async (chapterId: string): Promise<UserIUI[]> => 
     return JSON.parse(JSON.stringify(res));
 };
 
-
 const checkIfApplicantHasPendingTrainings = async (applicantId: string): Promise<boolean> => {
     const res = await TrainingChecklist.aggregate([
         {
