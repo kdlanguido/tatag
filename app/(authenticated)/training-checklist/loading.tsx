@@ -13,11 +13,12 @@ export default function Loading() {
           priority
         />
       </div>
+      
       <div className="flex items-center flex-col">
         <p className="text-sm font-medium text-muted-foreground">
           Loading Titan Arms Portal
         </p>
-        <span className="flex gap-1 items-center pt-1 mt-2">
+        <span className="flex gap-1 items-center pt-1">
           <span className="h-3 w-3 rounded-full bg-muted-foreground animate-bounce [animation-delay:-0.3s]"></span>
           <span className="h-3 w-3 rounded-full bg-muted-foreground animate-bounce [animation-delay:-0.35s]"></span>
           <span className="h-3 w-3 rounded-full bg-muted-foreground animate-bounce"></span>
