@@ -1,79 +1,35 @@
 "use client"
 
-import { markAsCompleted } from "@/actions/trainingChecklist"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { TrainingChecklistICustom } from "@/types/trainingChecklist"
-import { Check, Ellipsis } from "lucide-react"
-import { useRouter } from "next/navigation"
-import { useTransition } from "react"
-import { toast } from "sonner"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { MoreHorizontal } from "lucide-react"
 
 export function ChecklistActionBtn({
-  checklist,
-  applicantId,
-  approvedBy,
+    checklistId,
+    onComplete,
+    disabled,
 }: {
-  checklist: TrainingChecklistICustom
-  applicantId: string
-  approvedBy: string
+    checklistId: string,
+    onComplete: (checklistId: string) => void,
+    disabled: boolean
 }) {
-  const [isPending, startTransition] = useTransition()
-  const router = useRouter()
-
-  const handleMarkCompleted = () => {
-    const toastId = toast.loading("Processing training completion...")
-
-    startTransition(async () => {
-      try {
-        const formData = new FormData()
-        formData.append("checklistId", checklist._id as string)
-        formData.append("approvedBy", approvedBy)
-        formData.append("applicantId", applicantId)
-
-        await markAsCompleted(formData)
-        router.refresh()
-
-        toast.success("Training marked as completed", {
-          id: toastId,
-        })
-      } catch (err) {
-        toast.error("Something went wrong", {
-          id: toastId,
-        })
-      }
-    })
-  }
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" disabled={isPending}>
-          <Ellipsis className="h-4 w-4" />
-        </Button>
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent className="w-56" align="end">
-        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-
-        <DropdownMenuGroup>
-          <DropdownMenuItem
-            onClick={handleMarkCompleted}
-            disabled={isPending}
-            className="flex items-center gap-2"
-          >
-            <Check className="h-4 w-4" />
-            Mark as Completed
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="h-8 w-8 p-0">
+                    <span className="sr-only">Open menu</span>
+                    <MoreHorizontal className="h-4 w-4" />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+                <DropdownMenuLabel>Admin Options</DropdownMenuLabel>
+                <DropdownMenuItem
+                    onClick={() => onComplete(checklistId)}
+                    disabled={disabled}
+                >
+                    Mark as Completed
+                </DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    )
 }
