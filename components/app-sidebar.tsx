@@ -11,7 +11,7 @@ import { appSidebarNav } from "@/lib/contants"
 import { authClient } from "@/lib/auth-client"
 import { UserI } from "@/model/User.model"
 
-export function AppSidebar({ profile }: { profile: UserI }) {
+export function AppSidebar({ profile}: { profile: UserI}) {
 
   const { data: session } = authClient.useSession()
 
@@ -30,7 +30,7 @@ export function AppSidebar({ profile }: { profile: UserI }) {
       <SidebarContent>
         <NavMain items={appSidebarNav.navMain} header={"Dashboard"} />
         {
-          profile?.membership?.memberLevel === 'admin' && <NavMain items={appSidebarNav.navAdmin} header={"Admin Controls"} />
+          profile?.membership?.memberLevel === 'admin' && <NavMain items={appSidebarNav.navAdmin} header={"Admin Controls"} chapterId={profile?.membership?.chapterId.toString()} />
         }
       </SidebarContent>
       <SidebarFooter>

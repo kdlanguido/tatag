@@ -1,11 +1,13 @@
 import { fetchMembershipUpdateRequests } from "@/actions/admin"
+import { cachedCurrentUserProfile } from "@/app/(authenticated)/_data/user"
 import { columns } from "@/components/admins/Membership/Approvals/Columns"
 import { DataTable } from "@/components/admins/Membership/Approvals/Data-Table"
 import { Suspense } from "react"
 
 export default async function Page() {
 
-    const Requests = await fetchMembershipUpdateRequests()
+    const profile = await cachedCurrentUserProfile();
+    const Requests = await fetchMembershipUpdateRequests(profile.membership.chapterId.toString())
 
     return (
         <Suspense fallback={<div>Loading...</div>}>

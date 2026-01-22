@@ -23,7 +23,8 @@ import Link from "next/link"
 
 export function NavMain({
   items,
-  header
+  header,
+  chapterId
 }: {
   items: {
     title: string
@@ -35,10 +36,12 @@ export function NavMain({
       url: string
     }[]
   }[],
-  header: string
+  header: string,
+  chapterId?: string
 }) {
 
   const { toggleSidebar, isMobile } = useSidebar()
+
   return (
     <SidebarGroup>
       <SidebarGroupLabel>{header}</SidebarGroupLabel>
@@ -65,7 +68,7 @@ export function NavMain({
                       {item.items?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton asChild>
-                            <Link href={subItem.url} onClick={isMobile ? toggleSidebar : () => { }}>
+                            <Link href={subItem.title === 'Chapter Settings' ? subItem.url + "/" + chapterId : subItem.url} onClick={isMobile ? toggleSidebar : () => { }}>
                               <span>{subItem.title}</span>
                             </Link>
                           </SidebarMenuSubButton>

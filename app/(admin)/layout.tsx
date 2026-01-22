@@ -10,6 +10,7 @@ import { fetchProfile } from "@/actions/user";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { cachedCurrentUserProfile } from "../(authenticated)/_data/user";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,14 +33,18 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const profile = await fetchProfile();
+  const profile = await cachedCurrentUserProfile();
 
   const session = await auth.api.getSession({
     headers: await headers()
   });
 
-  if (!session || profile.membership.memberLevel !== "admin") {
-    redirect("/dashboard"); 
+  if (!session) {
+    redirect("/login");
+  }
+
+  if (profile.membership.memberLevel !== "admin") {
+    redirect("/dashboard");
   }
 
   return (

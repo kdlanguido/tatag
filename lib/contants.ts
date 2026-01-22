@@ -157,7 +157,7 @@ export const appSidebarNav = {
             icon: BookUser,
             items: [
                 {
-                    title: "Chapters List",
+                    title: "Chapter Settings",
                     url: "/admin/chapters",
                 },
                 {
@@ -167,11 +167,11 @@ export const appSidebarNav = {
             ],
         },
 
-        {
-            title: "Manage Trainings",
-            url: "/admin/trainings",
-            icon: Notebook,
-            items: [],
-        },
+        // {
+        //     title: "Manage Trainings",
+        //     url: "/admin/trainings",
+        //     icon: Notebook,
+        //     items: [],
+        // },
     ],
 }

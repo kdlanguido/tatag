@@ -41,10 +41,14 @@ const userSchema = new Schema<UserI>({
     email: {
         type: String,
         required: true,
+        unique: true,
+        lowercase: true,
     },
     nickname: {
         type: String,
         required: true,
+        unique: true,
+        lowercase: true,
     },
     weight: {
         type: String,

@@ -4,10 +4,10 @@ import { connectToMongoDB } from "@/lib/mongoose"
 import { MembershipUpdateLog } from "@/model/MembershipUpdateLog"
 import { User } from "@/model/User.model"
 
-const fetchMembershipUpdateRequests = async (): Promise<MemberShipUpdateLogCustomType[]> => {
+const fetchMembershipUpdateRequests = async (chapterId: string): Promise<MemberShipUpdateLogCustomType[]> => {
     await connectToMongoDB()
 
-    const res = await MembershipUpdateLog.find({ status: "pending" })
+    const res = await MembershipUpdateLog.find({ status: "pending", chapterId })
         .populate({
             path: "chapterId",
             select: "name"

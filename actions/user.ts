@@ -17,8 +17,14 @@ const registerUser = async (prevState: RegisterUserState, formData: FormData) =>
     const email = formData.get('email') as string
     const nickname = formData.get('nickname') as string
 
-    const emailIsTaken = await User.findOne({ email })
-    const nicknameIsTaken = await User.findOne({ nickname })
+    const normalizedEmail = email.toLowerCase()
+    const normalizedNickname = nickname.toLowerCase()
+
+    const emailIsTaken = await User.findOne({ email: normalizedEmail })
+    const nicknameIsTaken = await User.findOne({ nickname: normalizedNickname })
+
+    console.log("Email is taken" + emailIsTaken)
+    console.log("nickname is taken" + nicknameIsTaken)
 
     if (emailIsTaken) {
         return {
@@ -64,7 +70,7 @@ const updateUserProfile = async (prevState: ProfileUpdateInitState, formData: Fo
         }
     }
 
-    await User.updateOne({ email }, { $set: { nickname, weight } })
+    await User.updateOne({ email }, { $set: { nickname: nickname.toLowerCase(), weight } })
 
     return {
         weight,
@@ -118,7 +124,7 @@ const updateApplicationPromoteTomember = async (formData: FormData) => {
 
     if (!res) {
         console.log("Encountered error during ACTION:updateApplicationPromoteTomember")
-        return 
+        return
     }
 
     const deleteRes = await TrainingChecklist.deleteMany({ userId: id })

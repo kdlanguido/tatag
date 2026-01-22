@@ -34,18 +34,7 @@ export default async function Page({
         <Suspense fallback={<ChapterSkeleton />}>
             <div className='flex flex-1 flex-col gap-4 p-4'>
                 <div className="w-full">
-                    <div className="mb-5 flex justify-end gap-2 md:justify-between">
-                        <div className="flex gap-3">
-                            <Link href={"/admin/chapters"}>
-                                <Button variant={"outline"}>
-                                    <Undo2 />
-                                    <p className='hidden md:block'>
-                                        Back
-                                    </p>
-                                </Button>
-                            </Link>
-                        </div>
-
+                    <div className="mb-5 flex justify-end gap-2">
                         {
                             isAdmin &&
                             <Link href={`/admin/chapters/edit/${id}`}>
