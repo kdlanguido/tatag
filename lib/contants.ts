@@ -102,10 +102,10 @@ export const appSidebarNav = {
                     title: "Member Information",
                     url: "/membership",
                 },
-                // {
-                //     title: "Membership ID",
-                //     url: "/membership/virtual-id",
-                // },
+                {
+                    title: "Membership ID",
+                    url: "/membership/virtual-id",
+                },
                 {
                     title: "Membership Requests",
                     url: "/membership/approvals",
