@@ -11,6 +11,12 @@ import {
     SheetTitle,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { UnifrakturMaguntia } from "next/font/google";
+
+export const headerFont = UnifrakturMaguntia({
+    subsets: ["latin"],
+    weight: "400"
+})
 
 interface NavLink {
     title: string;
@@ -31,8 +37,8 @@ export default function MobileNavbar({ navLinks }: MobileNavbarProps) {
 
     return (
         <div className="flex lg:hidden justify-between items-center px-4 py-2 border-b">
-            <h1 className="text-xl font-semibold text-[#E4BD13]">
-                Titan Arms Portal
+            <h1 className={`${headerFont.className} text-xl font-semibold text-[#E4BD13]`}>
+                Titan Arms Brotherhood
             </h1>
 
             <Sheet open={open} onOpenChange={setOpen}>

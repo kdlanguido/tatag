@@ -1,4 +1,6 @@
 import { Badge } from "./ui/badge"
+import { useEffect, useState } from "react"
+
 
 export const getBadge = (memberStatus: string) => {
 
@@ -29,4 +31,21 @@ export const getBadge = (memberStatus: string) => {
             {memberStatus}
         </Badge>
     )
+}
+
+
+export const useBreakpoint = () => {
+    const [width, setWidth] = useState(0)
+
+    useEffect(() => {
+        const onResize = () => setWidth(window.innerWidth)
+        onResize()
+        window.addEventListener("resize", onResize)
+        return () => window.removeEventListener("resize", onResize)
+    }, [])
+
+    if (width >= 1280) return "xl"
+    if (width >= 1024) return "lg"
+    if (width >= 768) return "md"
+    return "sm"
 }

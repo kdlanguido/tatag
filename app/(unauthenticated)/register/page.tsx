@@ -16,6 +16,8 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { authClient } from "@/lib/auth-client"
+import { Undo2 } from "lucide-react"
+import Link from "next/link"
 
 export default function Page() {
 
@@ -54,65 +56,69 @@ export default function Page() {
     }, [state.success, session])
 
     return (
-        <Card className="w-full max-w-sm mx-auto mt-20 border border-muted shadow-sm">
-            <CardHeader className="text-center gap-1">
-                <CardTitle className="text-2xl font-bold">Register Applicant</CardTitle>
-                <CardDescription>
-                    {session ? "Syncing account..." : temporaryMessage}
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <form action={action} className="space-y-6">
-                    <div className="space-y-4">
+        <div className="min-h-screen w-full flex justify-center px-5 md:px-0">
+            <Card className="w-full md:w-[420px] h-max left-[50%] border  mt-30  border-muted shadow-sm ">
+                <CardHeader className="text-center gap-1">
+                    <CardTitle className="text-2xl font-bold">Register Applicant</CardTitle>
+                    <CardDescription>
+                        {session ? "Syncing account..." : temporaryMessage}
+                    </CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <form action={action} className="space-y-6">
+                        <div className="space-y-4">
 
-                        <div className="space-y-1.5">
-                            <Label htmlFor="email">Email</Label>
-                            <Input
-                                id="email"
-                                name="email"
-                                required
-                                className={state.emailErrorMsg ? "border-red-500 focus-visible:ring-red-500" : ""}
-                                placeholder="Please enter a valid email"
-                                defaultValue={temporaryEmail || ""}
-                            />
-                            {state.emailErrorMsg && (
-                                <p className="text-sm text-red-600">{state.emailErrorMsg}</p>
-                            )}
-                        </div>
-
-                        <div className="space-y-1.5">
-                            <Label htmlFor="nickname">Nickname</Label>
-                            <Input
-                                id="nickname"
-                                name="nickname"
-                                required
-                                className={state.nicknameErrorMsg ? "border-red-500 focus-visible:ring-red-500" : ""}
-                                placeholder="This will be your official nickname"
-                            />
-                            {state.nicknameErrorMsg && (
-                                <p className="text-sm text-red-600">{state.nicknameErrorMsg}</p>
-                            )}
-                        </div>
-
-                    </div>
-
-                    <Button
-                        type="submit"
-                        disabled={pending}
-                        className="w-full"
-                    >
-                        {pending ? (
-                            <div className="flex items-center gap-2">
-                                <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"></span>
-                                Registering...
+                            <div className="space-y-1.5">
+                                <Label htmlFor="email">Email</Label>
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    required
+                                    className={state.emailErrorMsg ? "border-red-500 focus-visible:ring-red-500" : ""}
+                                    placeholder="Please enter a valid email"
+                                    defaultValue={temporaryEmail || ""}
+                                />
+                                {state.emailErrorMsg && (
+                                    <p className="text-sm text-red-600">{state.emailErrorMsg}</p>
+                                )}
                             </div>
-                        ) : (
-                            "Register"
-                        )}
-                    </Button>
-                </form>
 
-            </CardContent>
-        </Card>
+                            <div className="space-y-1.5">
+                                <Label htmlFor="nickname">Nickname</Label>
+                                <Input
+                                    id="nickname"
+                                    name="nickname"
+                                    required
+                                    className={state.nicknameErrorMsg ? "border-red-500 focus-visible:ring-red-500" : ""}
+                                    placeholder="This will be your official nickname"
+                                />
+                                {state.nicknameErrorMsg && (
+                                    <p className="text-sm text-red-600">{state.nicknameErrorMsg}</p>
+                                )}
+                            </div>
+
+                        </div>
+                        <div className="flex justify-end gap-2">
+                            <Button type="button" asChild>
+                                <Link href={"/"} >
+                                    <Undo2 />Back
+                                </Link>
+                            </Button>
+                            <Button type="submit" disabled={pending} className="bg-main w-[120px]">
+                                {pending ? (
+                                    <div className="flex items-center gap-2">
+                                        <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"></span>
+                                        Registering...
+                                    </div>
+                                ) : (
+                                    "Register"
+                                )}
+                            </Button>
+                        </div>
+                    </form>
+
+                </CardContent>
+            </Card>
+        </div >
     )
 }

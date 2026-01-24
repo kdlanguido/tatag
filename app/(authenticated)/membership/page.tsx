@@ -5,8 +5,6 @@ import MembershipForm from '@/components/members/Membership/Forms/MembershipForm
 import ApplicationForm from '@/components/members/Membership/Forms/ApplicationForm'
 import { fetchBatchByChapterId } from '../_data/batch'
 
-export const revalidate = 3600;
-
 export default async function Page() {
 
     const chapters = await fetchChapters()

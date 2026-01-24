@@ -10,10 +10,12 @@ import { UserI } from '@/model/User.model'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 
-export default function ApplicationForm({ chaptersList, profile }: {
+interface PageProps {
     chaptersList: ChapterICustom[],
     profile: UserI
-}) {
+}
+
+export default function ApplicationForm({ chaptersList, profile }: PageProps) {
 
     const [formState, applyMembershipAction, applyMembershipIsPending] = useActionState(applyMembership, {
         success: null,
@@ -26,7 +28,6 @@ export default function ApplicationForm({ chaptersList, profile }: {
             toast("Notification", {
                 description: "Application Success, Please give us time to review your application."
             })
-
             router.refresh();
         }
     }, [formState])

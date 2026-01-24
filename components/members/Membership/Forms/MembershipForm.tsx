@@ -12,15 +12,17 @@ import { createMembershipUpdateRequest } from "@/actions/user";
 import { ApplicationUnderReviewAlert } from "../Alerts/ApplicantReviewAlert";
 import { fetchBatchByChapterId } from "@/app/(admin)/admin/_data/batch";
 
+interface PageProps {
+    chapterList: ChapterICustom[],
+    profile: UserI,
+    initialBatches: BatchI[]
+}
+
 export default function MembershipForm({
     chapterList,
     profile,
     initialBatches
-}: {
-    chapterList: ChapterICustom[],
-    profile: UserI,
-    initialBatches: BatchI[]
-}) {
+}: PageProps) {
 
     const [selectedChapter, setSelectedChapter] = useState(
         profile?.membership?.chapterId?.toString() || ""
