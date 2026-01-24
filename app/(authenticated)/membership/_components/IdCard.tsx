@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
-import Image from 'next/image';
 import { Alegreya_SC, Alumni_Sans } from 'next/font/google';
 import { formatDateToString } from '@/lib/helpers';
 import { Button } from '@/components/ui/button';
@@ -45,7 +44,7 @@ export default function IdCard({ session, profile, batch, chapter }: IDCardProps
 
     const Banner = () => (
         <div className='mt-5 flex justify-between items-start'>
-            <Image
+            <img
                 src="/assets/logo.png"
                 alt="Titan Arms Seal"
                 width={200}
@@ -61,7 +60,7 @@ export default function IdCard({ session, profile, batch, chapter }: IDCardProps
                     {chapter.name.toLowerCase() === 'titan arms taguig' && <span>Main Chapter</span>}
                 </div>
             </div>
-            <Image
+            <img
                 src="/assets/id/dxu.png"
                 alt="Titan Arms Seal"
                 width={200}
@@ -73,7 +72,7 @@ export default function IdCard({ session, profile, batch, chapter }: IDCardProps
 
     const Details = () => (
         <div className='mt-5 flex justify-between items-start'>
-            <Image
+            <img
                 src={userImage}
                 alt="Member Photo"
                 width={150}
@@ -102,7 +101,7 @@ export default function IdCard({ session, profile, batch, chapter }: IDCardProps
             </div>
 
             <div className="flex flex-col items-center">
-                <Image
+                <img
                     src="/assets/logo.png"
                     alt="Chapter Seal"
                     width={200}
@@ -120,16 +119,23 @@ export default function IdCard({ session, profile, batch, chapter }: IDCardProps
                 <div className="inline-flex gap-4">
                     <div
                         ref={cardRef}
-                        className="flex-shrink-0 h-[410px] w-[750px] bg-[url('/assets/id/card-bg.webp')] bg-no-repeat bg-cover px-8 rounded flex flex-col gap-3"
+                        className="relative flex-shrink-0 h-[410px] w-[750px] rounded overflow-hidden"
                     >
-                        <Banner />
-                        <Details />
-                        <h1
-                            className={`text-[#E8BF01] text-3xl tracking-widest mx-auto mt-3 ${alegreyaSC.className}`}
-                        >
-                            MEMBER IDENTIFICATION CARD
-                        </h1>
+                        <img
+                            src="/assets/id/card-bg.webp"
+                            className="absolute inset-0 w-full h-full object-cover"
+                            crossOrigin="anonymous"
+                        />
+
+                        <div className="relative z-10 px-8 flex flex-col gap-3">
+                            <Banner />
+                            <Details />
+                            <h1 className={`text-[#E8BF01] text-3xl tracking-widest mx-auto mt-3 ${alegreyaSC.className}`}>
+                                MEMBER IDENTIFICATION CARD
+                            </h1>
+                        </div>
                     </div>
+
                 </div>
             </div>
 

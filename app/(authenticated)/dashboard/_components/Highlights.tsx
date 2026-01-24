@@ -46,7 +46,7 @@ export default function HighlightsContainer() {
             <CardContent>
                 {/* Suspense allows the rest of the page to render while this fetches */}
                 <Suspense fallback={<HighlightsSkeleton />}>
-                    {/* <HighlightsList /> */}
+                   <p className="text-sm text-muted-foreground">No highlights yet.</p>
                 </Suspense>
             </CardContent>
         </Card>
