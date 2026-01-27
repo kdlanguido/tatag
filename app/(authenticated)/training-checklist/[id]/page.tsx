@@ -7,12 +7,14 @@ import { redirect } from 'next/navigation';
 
 export default async function page({ params }: { params: Promise<{ id: string }> }) {
 
+    //applicant id
     const { id } = await params;
+
     const { membership, _id } = await cachedCurrentUserProfile()
     const isAdmin = membership.memberLevel === 'admin'
 
+    //approver id
     if (!_id) redirect("/login")
-        
 
     return (
         <div className='flex flex-1 flex-col gap-4 p-4'>
@@ -24,8 +26,8 @@ export default async function page({ params }: { params: Promise<{ id: string }>
                             Training summary
                         </p>
                     </div>
-                    <Button variant="outline" hidden={!isAdmin}>
-                        <Link href="/admin/applicants" className='flex gap-2'><Undo2 /> Back</Link>
+                    <Button variant="outline">
+                        <Link href={isAdmin ? "/admin/applicants" : "/dashboard"} className='flex gap-2'><Undo2 /> Back</Link>
                     </Button>
                 </div>
                 <ChecklistServerDT isAdmin={isAdmin} applicantId={id} approvedBy={_id} />

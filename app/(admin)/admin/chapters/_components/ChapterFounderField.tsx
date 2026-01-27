@@ -10,25 +10,14 @@ import {
 } from "@/components/ui/dialog"
 import { Field, FieldLabel } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { useEffect, useState } from "react"
-import { fetchAllMembers } from "@/actions/user"
 import { UserI } from "@/model/User.model"
 import { useChapterStore } from "@/store/chapter.store"
 import { DataTable } from "./DataTable/User/Data-Table"
 import { columns } from "./DataTable/User/Columns"
 
-export function ChapterFounderField() {
+export function ChapterFounderField({ users }: { users: UserI[] }) {
 
-    const [userList, setUserList] = useState<UserI[]>([])
     const { createChapterSelectedFounder, chapterFounderFieldIsOpen, toggleChapterFounderFieldIsOpen } = useChapterStore();
-
-    useEffect(() => {
-        const executeFetchActiveMembers = async () => {
-            const res = await fetchAllMembers()
-            setUserList(res)
-        }
-        executeFetchActiveMembers()
-    }, [])
 
     return (
         <Dialog open={chapterFounderFieldIsOpen}>
@@ -58,7 +47,7 @@ export function ChapterFounderField() {
                     </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4">
-                    <DataTable columns={columns} data={userList} />
+                    <DataTable columns={columns} data={users} />
                 </div>
 
                 <DialogFooter>

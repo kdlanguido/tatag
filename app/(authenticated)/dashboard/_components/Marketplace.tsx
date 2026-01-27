@@ -1,8 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { ShoppingBag, ShoppingCartIcon } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import Image from "next/image";
 
 export default function MarketplaceCard() {
@@ -13,17 +11,6 @@ export default function MarketplaceCard() {
                     <ShoppingBag className="h-4 w-4" />
                     <CardTitle>Marketplace</CardTitle>
                 </div>
-                {/* <Popover>
-                    <PopoverTrigger asChild>
-                        <Button variant="ghost" className="cursor-pointer font-normal text-[12px] !py-1 w-[120px]">
-                            <ShoppingCartIcon className="!h-3 !w-3 mr-1" />
-                            Visit
-                        </Button>
-                    </PopoverTrigger>
-                    <PopoverContent align="end" className="w-auto text-sm text-muted-foreground">
-                        Marketplace is coming soon!
-                    </PopoverContent>
-                </Popover> */}
             </CardHeader>
 
             <CardContent className="space-y-8">

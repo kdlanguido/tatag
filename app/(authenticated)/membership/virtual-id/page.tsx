@@ -7,7 +7,6 @@ import IdCard from '../_components/IdCard'
 import { redirect } from 'next/navigation'
 
 export default async function page() {
-
   const session = await auth.api.getSession({ headers: await headers() })
   const profile = await cachedCurrentUserProfile()
   const stringifiedProfile = JSON.parse(JSON.stringify(profile))

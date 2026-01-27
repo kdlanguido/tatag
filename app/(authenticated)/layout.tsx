@@ -6,7 +6,7 @@ import { Toaster } from "sonner";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { SiteHeader } from "@/components/site-header";
 import { AppSidebar } from "@/components/app-sidebar";
-import { fetchProfile } from "@/actions/user";
+import { cachedCurrentUserProfile } from "./_data/user";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +30,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const profile = await fetchProfile();
+  const profile = await cachedCurrentUserProfile();
 
   return (
     <html lang="en" suppressHydrationWarning>

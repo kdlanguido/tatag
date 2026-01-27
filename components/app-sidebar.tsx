@@ -28,6 +28,8 @@ export function AppSidebar({ profile}: { profile: UserI}) {
       className="top-(--header-height) h-[calc(100svh-var(--header-height))]!"
     >
       <SidebarContent>
+        <NavMain items={appSidebarNav.navMenu} header={"Main Menu"} />
+
         <NavMain items={appSidebarNav.navMain} header={"Dashboard"} />
         {
           profile?.membership?.memberLevel === 'admin' && <NavMain items={appSidebarNav.navAdmin} header={"Admin Controls"} chapterId={profile?.membership?.chapterId.toString()} />

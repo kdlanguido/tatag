@@ -8,13 +8,17 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 const cachedCurrentUserProfile = async (): Promise<UserI> => {
-
     const session = await auth.api.getSession({ headers: await headers() })
 
     const key = `user:profile:${session?.user?.email}`
 
+    if (!session?.user?.email) {
+        redirect('/login');
+    }
+
     const cached = await redis?.get(key)
-    if (cached) return JSON.parse(cached) as UserI
+
+    if (cached) { return JSON.parse(cached) as UserI }
 
     await connectToMongoDB();
 
@@ -24,9 +28,9 @@ const cachedCurrentUserProfile = async (): Promise<UserI> => {
         redirect("/register")
     }
 
-    await redis?.set(key, JSON.stringify(profile), "EX", 300) 
+    await redis?.set(key, JSON.stringify(profile), "EX", 300)
 
-    return profile
+    return JSON.parse(JSON.stringify(profile))
 }
 
 

@@ -11,16 +11,22 @@ const fetchTrainingChecklist = async (userId: string): Promise<TrainingChecklist
 }
 
 const fetchTrainingPercentageCompleted = async (userId: string): Promise<number> => {
+
     await connectToMongoDB();
+    
     const totalTrainings = await TrainingChecklist.countDocuments({ userId });
     const completedTrainings = await TrainingChecklist.countDocuments({ userId, status: "completed" });
 
     if (totalTrainings === 0) {
         return 0;
     }
-    return (completedTrainings / totalTrainings) * 100;
+
+    const percentageCompleted = Math.round((completedTrainings / totalTrainings) * 100)
+    
+    return percentageCompleted;
 }
 
-
-
-export { fetchTrainingChecklist, fetchTrainingPercentageCompleted };
+export {
+    fetchTrainingChecklist,
+    fetchTrainingPercentageCompleted
+};

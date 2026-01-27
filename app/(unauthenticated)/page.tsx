@@ -11,14 +11,13 @@ export const bodyFont = UnifrakturMaguntia({
   weight: "400"
 })
 
-
 import { LogoSwapper } from "./_components/LogoSwapper";
-import Link from "next/link";
 import ChapterGlobe from "./_components/ChapterGlobe";
 import LogoLooper from "./_components/LogoLooper";
 import FriendshipImage from "./_components/FriendshipImage";
 import { FaqAccordion } from "./_components/FaqAccordion";
 import { CardHighlight } from "./_components/CardHighlight";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -89,7 +88,6 @@ export default function Home() {
           </div>
         </div>
 
-
         <div className="flex flex-col">
           <p className={`${headingFont.className} text-2xl font-semibold text-center mb-5`}>
             Frequently Asked Questions
@@ -107,7 +105,6 @@ export default function Home() {
             <LogoLooper />
           </div>
         </div>
-
 
       </div>
     </div >

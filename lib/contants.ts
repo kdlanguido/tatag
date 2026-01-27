@@ -4,6 +4,7 @@ import {
     Calendar,
     Home,
     IdCard,
+    LayoutDashboard,
     Notebook,
     Trophy,
     UserLock,
@@ -58,11 +59,22 @@ export const statusMap = {
 }
 
 export const appSidebarNav = {
+    navMenu: [
+        {
+            title: "Home",
+            url: "/",
+            icon: Home,
+            items: []
+
+        },
+    ],
+
     navMain: [
+
         {
             title: "Dashboard",
             url: "/dashboard",
-            icon: Home,
+            icon: LayoutDashboard,
             items: []
 
         },
@@ -175,3 +187,30 @@ export const appSidebarNav = {
         // },
     ],
 }
+
+export const navLinks: NavLinksI[] = [
+    {
+        path: "/",
+        title: "Home"
+    },
+    // {
+    //     path: "/about-us",
+    //     title: "About Us"
+    // },
+    // {
+    //     path: "/who-we-are",
+    //     title: "Who We Are"
+    // },
+    // {
+    //     path: "/chapters",
+    //     title: "Chapters"
+    // },
+    // {
+    //     path: "/register",
+    //     title: "Join Us"
+    // },
+    {
+        path: "/login",
+        title: "Members Portal"
+    },
+]

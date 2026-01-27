@@ -432,8 +432,8 @@ export {
     checkIfUserIsAdmin,
     fetchProfile,
     fetchMembershipUpdateRequests,
-    fetchActiveMembers,
-    fetchAllMembers,
+    // fetchActiveMembers,
+    // fetchAllMembers,
     fetchApplicationInformation,
     updateApplicationPromoteTomember
 }

@@ -17,7 +17,7 @@ export default async function Page() {
     }
 
     const userExists = await checkIfUserExists()
-    
+
     if (!userExists) {
         await auth.api.signOut({ headers: await headers() });
         redirect("/register")
@@ -28,13 +28,12 @@ export default async function Page() {
         redirect("/membership")
     }
 
-    const { _id } = await cachedCurrentUserProfile();
+    const { _id, membership } = await cachedCurrentUserProfile();
 
     return (
-
         <div className="flex flex-1 flex-col gap-4 p-4">
             <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                <MyTraining userId={_id ?? ""} />
+                <MyTraining userId={_id ?? ""} isApplicant={membership.memberLevel === 'applicant'} />
                 <HighlightsContainer />
                 <MarketplaceCard />
             </div>
@@ -42,6 +41,5 @@ export default async function Page() {
                 <MembersFeed />
             </div>
         </div>
-
     )
 }

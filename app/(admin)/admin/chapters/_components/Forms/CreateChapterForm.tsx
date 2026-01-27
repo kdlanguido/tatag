@@ -16,17 +16,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { ChapterFounderField } from "../ChapterFounderField";
 
 export default function CreateChapterForm({
-    profileData
+    profileData,
+    userList
 }: {
-    profileData: Promise<UserI>
+    profileData: Promise<UserI>,
+    userList: Promise<UserI[]>
 }) {
 
     const profile = use(profileData)
+    const users = use(userList)
 
     const [selectedRegion, setSelectedRegion] = useState("ncr");
     const [chapterExist, setChapterExist] = useState(false)
     const [chapterName, setChapterName] = useState('')
-
 
     const [state, action, pending] = useActionState(createChapter, {
         success: null
@@ -66,9 +68,7 @@ export default function CreateChapterForm({
 
     return (
         <div className='flex flex-1 flex-col gap-4 p-4'>
-
             <div className="w-full md:w-1/2">
-
                 <div className="mb-5 text-center md:text-start">
                     <h1 className="font-semibold">Create a New Chapter</h1>
                     <h1 className=" text-sm text-muted-foreground">Chapter information</h1>
@@ -112,7 +112,7 @@ export default function CreateChapterForm({
                             {chapterExist && <FieldDescription className="text-red-500 pt-0 text-xs">Chapter Name Exists</FieldDescription>}
                         </Field>
 
-                        <ChapterFounderField />
+                        <ChapterFounderField users={users} />
 
                         <Field>
                             <FieldLabel htmlFor="slogan" >Slogan</FieldLabel>
